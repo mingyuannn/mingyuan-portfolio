@@ -164,7 +164,9 @@ export default defineConfig({
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // 因为你的 root 设置在了 client 文件夹，
+    // 用 ../dist/public 能确保它精准生成在项目根目录的 dist 目录下
+    outDir: "../dist/public", 
     emptyOutDir: true,
   },
   server: {

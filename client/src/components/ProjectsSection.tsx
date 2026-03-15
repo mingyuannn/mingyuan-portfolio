@@ -12,6 +12,7 @@ const SUBWAY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mP
 interface ProjectDetail {
   heading: string;
   content: string | string[];
+  pdfAttachments?: { label: string; url: string }[];
 }
 
 interface Project {
@@ -126,6 +127,21 @@ const projects: Project[] = [
         heading: "Reflection",
         content:
           "This project reinforced the importance of designing for dignity alongside functionality. Early prototypes prioritized technical capability but felt clinical and othering. Subsequent iterations focused on making the glasses visually indistinguishable from regular eyewear, and on ensuring the interaction model was as discreet as possible \u2014 respecting the user\u2019s desire to participate in social situations without drawing attention to their assistive technology.",
+      },
+      {
+        heading: "Process Documentation",
+        content:
+          "Full design process documentation including low-fidelity prototype exploration and updated vertical prototype with new features.",
+        pdfAttachments: [
+          {
+            label: "HW4 — Developing Low-Fidelity Prototypes",
+            url: "/HW4.pdf",
+          },
+          {
+            label: "HW5 — Updated Vertical Prototype (SignBridge Duo)",
+            url: "/HW5.pdf",
+          },
+        ],
       },
     ],
   },
@@ -346,7 +362,7 @@ function ProjectCard({
       >
         <div className="border border-[#E8E4DC] border-t-0 bg-white p-8 lg:p-12">
           <div className="max-w-3xl">
-            {/* Figma embed for projects with figmaUrl */}
+            {/* Figma embed */}
             {project.figmaUrl && (
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-4">
@@ -396,7 +412,8 @@ function ProjectCard({
                 </p>
               </div>
             )}
-            {/* Video embed for projects with videoUrl */}
+
+            {/* Video embed */}
             {project.videoUrl && (
               <div className="mb-10">
                 <div className="flex items-center gap-3 mb-4">
@@ -410,14 +427,14 @@ function ProjectCard({
                       color: "#C4603A",
                     }}
                   >
-                    {project.videoUrl?.includes('bilibili') ? 'Watch the Film' : 'Product Launch Video'}
+                    {project.videoUrl?.includes("bilibili") ? "Watch the Film" : "Product Launch Video"}
                   </h4>
                 </div>
                 <div
                   className="relative w-full bg-black"
                   style={{ aspectRatio: "16/9" }}
                 >
-                  {project.videoUrl?.includes('bilibili') || project.videoUrl?.includes('BV') ? (
+                  {project.videoUrl?.includes("bilibili") || project.videoUrl?.includes("BV") ? (
                     <iframe
                       src={`https://player.bilibili.com/player.html?bvid=BV1bU411d7vK&page=1&high_quality=1&danmaku=0`}
                       allowFullScreen
@@ -430,7 +447,7 @@ function ProjectCard({
                       className="absolute inset-0 w-full h-full"
                       controls
                       preload="metadata"
-                      style={{ background: '#000' }}
+                      style={{ background: "#000" }}
                     >
                       <source src={project.videoUrl} type="video/mp4" />
                       <source src={project.videoUrl} type="video/quicktime" />
@@ -447,7 +464,7 @@ function ProjectCard({
                     color: "#9B9590",
                   }}
                 >
-                  {project.videoUrl?.includes('bilibili') ? (
+                  {project.videoUrl?.includes("bilibili") ? (
                     <>
                       Also available on{" "}
                       <a
@@ -472,6 +489,8 @@ function ProjectCard({
                 </p>
               </div>
             )}
+
+            {/* Detail sections */}
             {project.details.map((detail, i) => (
               <div key={i} className="mb-10 last:mb-0">
                 <div className="flex items-center gap-3 mb-4">
@@ -488,6 +507,7 @@ function ProjectCard({
                     {detail.heading}
                   </h4>
                 </div>
+
                 {Array.isArray(detail.content) ? (
                   <ul className="space-y-3">
                     {detail.content.map((item, j) => (
@@ -501,7 +521,7 @@ function ProjectCard({
                           color: "#52504A",
                         }}
                       >
-                        <span className="text-[#C4603A] mt-0.5 shrink-0"></span>
+                        <span className="text-[#C4603A] mt-0.5 shrink-0">—</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -518,6 +538,51 @@ function ProjectCard({
                     {detail.content}
                   </p>
                 )}
+
+                {/* PDF inline previews */}
+                {detail.pdfAttachments && detail.pdfAttachments.map((pdf, pdfIndex) => (
+                  <div key={pdfIndex} className="mt-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <span
+                        style={{
+                          fontFamily: "'DM Mono', monospace",
+                          fontSize: "0.65rem",
+                          letterSpacing: "0.08em",
+                          textTransform: "uppercase",
+                          color: "#9B9590",
+                        }}
+                      >
+                        {pdf.label}
+                      </span>
+                      <a
+                        href={pdf.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#C4603A] hover:underline"
+                        style={{
+                          fontFamily: "'DM Mono', monospace",
+                          fontSize: "0.65rem",
+                          letterSpacing: "0.08em",
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Open PDF \u2192
+                      </a>
+                    </div>
+                    <div
+                      className="w-full border border-[#E8E4DC] bg-[#F7F5F0]"
+                      style={{ height: "600px" }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <iframe
+                        src={`${pdf.url}#toolbar=0&navpanes=0`}
+                        className="w-full h-full"
+                        style={{ border: "none" }}
+                        title={pdf.label}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             ))}
           </div>

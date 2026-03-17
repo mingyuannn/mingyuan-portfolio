@@ -9,7 +9,8 @@ const DAYU_IMG = "https://private-us-east-1.manuscdn.com/user_upload_by_module/s
 const AR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQcem2UYFzT3RtPotqe/project-ar-glasses-YRV9yH3xbmHv354X6ZLB9t.webp";
 const SUBWAY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQcem2UYFzT3RtPotqe/project-subway-kGsaGMdF3bSKKVmVbWvXxz.webp";
 // TODO: Replace with a real CineRoute screenshot — upload to public/ and update this URL
-const CINEROUTE_IMG = "/imageofcine.png";
+const CINEROUTE_IMG = "/imageofcine.jpg";
+
 interface ProjectDetail {
   heading: string;
   content: string | string[];
@@ -156,7 +157,7 @@ const projects: Project[] = [
     subtitle: "Vibe Coding \u00b7 AI Travel App",
     category: "AI \u00b7 Product \u00b7 Vibe Coding",
     tags: ["DeepSeek API", "Leaflet.js", "Vibe Coding", "Travel", "AI"],
-    image: "/imageofcine.jpg",
+    image: CINEROUTE_IMG, 
     // TODO: Replace with your actual GitHub repo URL for CineRoute
     githubUrl: "https://cineroute-production.up.railway.app/",
     summary:

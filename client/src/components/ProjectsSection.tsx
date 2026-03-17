@@ -156,7 +156,7 @@ const projects: Project[] = [
     subtitle: "Vibe Coding \u00b7 AI Travel App",
     category: "AI \u00b7 Product \u00b7 Vibe Coding",
     tags: ["DeepSeek API", "Leaflet.js", "Vibe Coding", "Travel", "AI"],
-    image: CINEROUTE_IMG,
+    image: "/imageofcine.jpg",
     // TODO: Replace with your actual GitHub repo URL for CineRoute
     githubUrl: "https://cineroute-production.up.railway.app/",
     summary:

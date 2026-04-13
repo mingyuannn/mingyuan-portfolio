@@ -351,57 +351,101 @@ function ProjectCard({
           </div>
         </div>
 
-        {/* Card info bar */}
-        <div className="bg-[#F7F5F0] border border-[#E8E4DC] border-t-0 p-6 flex flex-col sm:flex-row sm:items-start gap-4">
-          <div className="flex-1">
-            <p
-              className="mb-2"
-              style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: "0.7rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "#C4603A",
-              }}
+        {/* Card info bar — redesigned */}
+        <div className="bg-[#F7F5F0] border border-[#E8E4DC] border-t-0">
+          {/* Top row: number + title + category */}
+          <div className="flex items-stretch">
+            {/* Left: large project number */}
+            <div
+              className="hidden sm:flex items-center justify-center px-6 border-r border-[#E8E4DC]"
+              style={{ minWidth: "4rem" }}
             >
-              {project.subtitle}
-            </p>
-            <h3
-              className="mb-3"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 700,
-                fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-                color: "#1A1A18",
-              }}
-            >
-              {project.title}
-            </h3>
+              <span
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 900,
+                  fontSize: "2.2rem",
+                  lineHeight: 1,
+                  color: "#E8E4DC",
+                  letterSpacing: "-0.04em",
+                }}
+              >
+                {project.number}
+              </span>
+            </div>
+
+            {/* Center: subtitle + title */}
+            <div className="flex-1 px-6 py-5">
+              <p
+                className="mb-1"
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "#C4603A",
+                }}
+              >
+                {project.subtitle}
+              </p>
+              <h3
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.4rem, 2.8vw, 2rem)",
+                  letterSpacing: "-0.025em",
+                  lineHeight: 1.05,
+                  color: "#1A1A18",
+                }}
+              >
+                {project.title}
+              </h3>
+            </div>
+
+            {/* Right: category label */}
+            <div className="hidden lg:flex items-center px-6 border-l border-[#E8E4DC]">
+              <p
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "#9B9590",
+                  writingMode: "vertical-rl",
+                  transform: "rotate(180deg)",
+                }}
+              >
+                {project.category}
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom row: summary + expand hint */}
+          <div className="border-t border-[#E8E4DC] px-6 py-4 flex items-center justify-between gap-6">
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.9rem",
-                lineHeight: 1.7,
+                fontSize: "0.875rem",
+                lineHeight: 1.75,
                 color: "#52504A",
+                maxWidth: "680px",
               }}
             >
               {project.summary}
             </p>
-          </div>
-          <div className="sm:ml-8 sm:text-right shrink-0">
-            <p
+            <span
               style={{
                 fontFamily: "'DM Mono', monospace",
-                fontSize: "0.65rem",
-                letterSpacing: "0.08em",
+                fontSize: "0.6rem",
+                letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 color: "#9B9590",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
               }}
             >
-              {project.category}
-            </p>
+              {isExpanded ? "收起 ↑" : "展开 ↓"}
+            </span>
           </div>
         </div>
       </div>
@@ -415,7 +459,36 @@ function ProjectCard({
           transition: "max-height 0.7s ease, opacity 0.5s ease",
         }}
       >
-        <div className="border border-[#E8E4DC] border-t-0 bg-white p-8 lg:p-12">
+        <div className="border border-[#E8E4DC] border-t-0 bg-white">
+          {/* Detail panel header bar */}
+          <div className="border-b border-[#E8E4DC] px-8 lg:px-12 py-5 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-6 h-px bg-[#C4603A]" />
+              <span
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: "0.65rem",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "#9B9590",
+                }}
+              >
+                {project.category} · {project.subtitle}
+              </span>
+            </div>
+            <span
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 700,
+                fontSize: "1.1rem",
+                color: "#E8E4DC",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              {project.number}
+            </span>
+          </div>
+          <div className="p-8 lg:p-12">
           <div className="max-w-3xl">
 
             {/* GitHub link */}
@@ -584,46 +657,82 @@ function ProjectCard({
 
             {/* Detail sections */}
             {project.details.map((detail, i) => (
-              <div key={i} className="mb-10 last:mb-0">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-0.5 bg-[#C4603A]" />
-                  <h4
+              <div key={i} className="mb-12 last:mb-0">
+                {/* Heading: left border accent + label + title */}
+                <div className="flex items-start gap-4 mb-5">
+                  <div
                     style={{
-                      fontFamily: "'DM Mono', monospace",
-                      fontSize: "0.7rem",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      color: "#C4603A",
+                      width: "3px",
+                      minHeight: "2.5rem",
+                      backgroundColor: "#C4603A",
+                      flexShrink: 0,
+                      marginTop: "2px",
                     }}
-                  >
-                    {detail.heading}
-                  </h4>
+                  />
+                  <div>
+                    <p
+                      style={{
+                        fontFamily: "'DM Mono', monospace",
+                        fontSize: "0.6rem",
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "#C4603A",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <h4
+                      style={{
+                        fontFamily: "'Playfair Display', serif",
+                        fontWeight: 700,
+                        fontSize: "clamp(1.05rem, 1.8vw, 1.25rem)",
+                        letterSpacing: "-0.015em",
+                        lineHeight: 1.2,
+                        color: "#1A1A18",
+                      }}
+                    >
+                      {detail.heading}
+                    </h4>
+                  </div>
                 </div>
 
                 {Array.isArray(detail.content) ? (
-                  <ul className="space-y-3">
+                  <ul className="space-y-4 pl-7">
                     {detail.content.map((item, j) => (
                       <li
                         key={j}
-                        className="flex gap-3"
+                        className="flex gap-4"
                         style={{
                           fontFamily: "'DM Sans', sans-serif",
                           fontSize: "0.9rem",
-                          lineHeight: 1.75,
+                          lineHeight: 1.8,
                           color: "#52504A",
                         }}
                       >
-                        <span className="text-[#C4603A] mt-0.5 shrink-0">—</span>
+                        <span
+                          style={{
+                            color: "#C4603A",
+                            flexShrink: 0,
+                            marginTop: "0.35rem",
+                            width: "6px",
+                            height: "6px",
+                            borderRadius: "50%",
+                            backgroundColor: "#C4603A",
+                            display: "inline-block",
+                          }}
+                        />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
                   <p
+                    className="pl-7"
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.9rem",
-                      lineHeight: 1.9,
+                      lineHeight: 2.0,
                       color: "#52504A",
                     }}
                   >
@@ -685,18 +794,19 @@ function ProjectCard({
               e.stopPropagation();
               onToggle();
             }}
-            className="mt-8 flex items-center gap-2 transition-colors duration-300 hover:text-[#C4603A]"
+            className="mt-10 flex items-center gap-3 px-5 py-2.5 border border-[#E8E4DC] transition-all duration-300 hover:border-[#C4603A] hover:text-[#C4603A]"
             style={{
               fontFamily: "'DM Mono', monospace",
-              fontSize: "0.7rem",
+              fontSize: "0.65rem",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               color: "#9B9590",
             }}
           >
-            <span style={{ transform: "rotate(45deg)", display: "inline-block", fontSize: "1rem" }}>+</span>
+            <span style={{ transform: "rotate(45deg)", display: "inline-block", fontSize: "1rem", lineHeight: 1 }}>+</span>
             收起
           </button>
+          </div>{/* end inner padding div */}
         </div>
       </div>
     </div>
@@ -768,7 +878,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Project list */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}

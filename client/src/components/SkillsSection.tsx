@@ -7,42 +7,42 @@ import { useEffect, useRef } from "react";
 const skillCategories = [
   {
     id: "ai",
-    label: "AI Tools",
+    label: "AI 工具",
     number: "01",
     skills: [
-      { name: "Midjourney", desc: "Image generation & visual concept development" },
-      { name: "Runway", desc: "Video synthesis & motion generation" },
-      { name: "ChatGPT / Claude", desc: "Narrative development & content strategy" },
+      { name: "Midjourney", desc: "图像生成与视觉概念开发" },
+      { name: "Runway", desc: "视频合成与运动生成" },
+      { name: "ChatGPT / Claude", desc: "叙事开发与内容策略" },
     ],
   },
   {
     id: "design",
-    label: "Design",
+    label: "设计",
     number: "02",
     skills: [
-      { name: "Figma", desc: "UI/UX prototyping & interaction design" },
-      { name: "MasterGo", desc: "Product design & collaborative wireframing" },
-      { name: "Photoshop", desc: "Visual editing & asset production" },
+      { name: "Figma", desc: "UI/UX 原型与交互设计" },
+      { name: "MasterGo", desc: "产品设计与协作线框图" },
+      { name: "Photoshop", desc: "视觉编辑与资产制作" },
     ],
   },
   {
     id: "programming",
-    label: "Programming",
+    label: "编程",
     number: "03",
     skills: [
-      { name: "Python", desc: "Data analysis, automation & AI scripting" },
-      { name: "JavaScript", desc: "Web development & interactive prototypes" },
-      { name: "HTML / CSS", desc: "Frontend structure & styling" },
+      { name: "Python", desc: "数据分析、自动化与 AI 脚本" },
+      { name: "JavaScript", desc: "Web 开发与交互式原型" },
+      { name: "HTML / CSS", desc: "前端结构与样式" },
     ],
   },
   {
     id: "media",
-    label: "Media Tools",
+    label: "媒体工具",
     number: "04",
     skills: [
-      { name: "Premiere Pro", desc: "Video editing & post-production" },
-      { name: "Photoshop", desc: "Photo manipulation & graphic design" },
-      { name: "After Effects", desc: "Motion graphics & visual effects" },
+      { name: "Premiere Pro", desc: "视频编辑与后期制作" },
+      { name: "Photoshop", desc: "照片处理与平面设计" },
+      { name: "After Effects", desc: "动态图形与视觉特效" },
     ],
   },
 ];
@@ -94,7 +94,7 @@ export default function SkillsSection() {
         <div className="flex items-center gap-4 mb-6 reveal">
           <div className="w-10 h-0.5 bg-[#C4603A]" />
           <span className="font-['DM_Mono'] text-xs tracking-[0.08em] uppercase text-[#9B9590]">
-            Capabilities
+            能力
           </span>
         </div>
 
@@ -107,9 +107,8 @@ export default function SkillsSection() {
               lineHeight: 1.05,
             }}
           >
-            Skills &amp;
-            <br />
-            <span className="italic text-[#C4603A]">Expertise</span>
+            技能与<br />
+            <span className="italic text-[#C4603A]">专长</span>
           </h2>
         </div>
 
@@ -157,7 +156,7 @@ export default function SkillsSection() {
         <div className="mt-12 flex items-center gap-4 reveal">
           <div className="w-10 h-px bg-white/20" />
           <p className="font-['DM_Mono'] text-[0.7rem] tracking-[0.08em] uppercase text-white/30">
-            Always learning · Always building
+            持续学习 · 持续构建
           </p>
         </div>
       </div>

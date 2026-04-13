@@ -83,7 +83,7 @@ export default function HeroSection() {
                 color: "#9B9590",
               }}
             >
-              Cornell University &nbsp;·&nbsp; Information Science &nbsp;·&nbsp; HCI
+              康奈尔大学 &nbsp;·&nbsp; 信息科学 &nbsp;·&nbsp; 人机交互
             </span>
           </div>
 
@@ -117,7 +117,7 @@ export default function HeroSection() {
               marginBottom: "1.75rem",
             }}
           >
-            AI Product &amp; Creative Technology Designer
+            AI 产品与创意技术设计师
           </p>
 
           {/* Thin divider */}
@@ -135,8 +135,7 @@ export default function HeroSection() {
               marginBottom: "2.5rem",
             }}
           >
-            I explore how artificial intelligence can enhance storytelling,
-            accessibility, and urban experiences through thoughtful product design.
+            我致力于通过深思熟虑的产品设计，探索人工智能如何增强叙事、无障碍体验和城市生活。
           </p>
 
           {/* CTA buttons */}
@@ -153,7 +152,7 @@ export default function HeroSection() {
                 textTransform: "uppercase",
               }}
             >
-              View Projects
+              查看项目
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
@@ -170,12 +169,12 @@ export default function HeroSection() {
                 textTransform: "uppercase",
               }}
             >
-              About Me
+              关于我
             </button>
           </div>
         </div>
 
-        {/* Scroll indicator — bottom right */}
+        {/* 向下滚动 indicator — bottom right */}
         <div
           className="animate-in absolute bottom-8 right-8 flex flex-col items-center gap-3"
           style={{ opacity: 0.45 }}
@@ -190,7 +189,7 @@ export default function HeroSection() {
               writingMode: "vertical-rl",
             }}
           >
-            Scroll
+            向下滚动
           </span>
           <div
             style={{

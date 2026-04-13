@@ -5,11 +5,11 @@
 import { useState, useEffect } from "react";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-  { label: "Resume", href: "#resume" },
+  { label: "关于", href: "#about" },
+  { label: "项目", href: "#projects" },
+  { label: "技能", href: "#skills" },
+  { label: "联系", href: "#contact" },
+  { label: "简历", href: "#resume" },
 ];
 
 export default function Navbar() {
@@ -56,7 +56,7 @@ export default function Navbar() {
           <span
             className="font-['DM_Mono'] text-[10px] tracking-[0.12em] uppercase text-[#9B9590] mt-0.5"
           >
-            Portfolio
+            作品集
           </span>
         </a>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
             href="mailto:mp2335@cornell.edu"
             className="ml-2 px-5 py-2.5 bg-[#1A1A18] text-[#F7F5F0] font-['DM_Mono'] text-[0.7rem] tracking-[0.1em] uppercase transition-all duration-300 hover:bg-[#C4603A]"
           >
-            Say Hello
+            打个招呼
           </a>
         </nav>
 
@@ -123,7 +123,7 @@ export default function Navbar() {
             href="mailto:mp2335@cornell.edu"
             className="mt-2 px-5 py-3 bg-[#1A1A18] text-[#F7F5F0] font-['DM_Mono'] text-[0.7rem] tracking-[0.1em] uppercase text-center"
           >
-            Say Hello
+            打个招呼
           </a>
         </nav>
       </div>

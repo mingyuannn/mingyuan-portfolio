@@ -36,22 +36,22 @@ const projects: Project[] = [
   {
     id: "dayu",
     number: "01",
-    title: "Dayu Controls the Flood",
-    subtitle: "AI Short Film",
+    title: "大禹治水",
+    subtitle: "AI 短片",
     category: "AI \u00b7 Storytelling \u00b7 Generative Media",
-    tags: ["Midjourney", "Premiere Pro", "AI Storytelling"],
+    tags: ["Midjourney", "Premiere Pro", "AI 叙事"],
     image: DAYU_IMG,
     videoUrl: "https://www.bilibili.com/video/BV1bU411d7vK/",
     summary:
       "An experimental AI-generated short film reinterpreting the Chinese myth \u2018Dayu Controls the Flood.\u2019 The project explores how generative AI tools can assist in visual storytelling and narrative design.",
     details: [
       {
-        heading: "Project Overview",
+        heading: "项目概述",
         content:
           "This experimental short film reimagines one of China\u2019s most enduring myths\u2014the story of Dayu, the legendary figure who tamed catastrophic floods through perseverance, engineering, and collective knowledge. Rather than presenting the myth as a traditional historical narrative, the film reconstructs it through a speculative visual world that blends ancient cosmology, environmental struggle, and exploration.",
       },
       {
-        heading: "Story Structure",
+        heading: "故事结构",
         content: [
           "Act I \u2014 The Deep Call: Establishing the ritual of the \u2018Deep Sea Gift\u2019 and the bond between mentor and apprentice in a world of maritime peril.",
           "Act II \u2014 The Discovery: The recovery of the mysterious giant egg, sparking a conflict between scientific curiosity and the looming threat of the unknown.",
@@ -59,84 +59,84 @@ const projects: Project[] = [
         ],
       },
       {
-        heading: "Creative Process",
+        heading: "创作过程",
         content:
           "The production workflow began with a detailed narrative script, followed by storyboarding using Midjourney to generate keyframe concepts. Each scene was iterated through multiple prompt variations to achieve stylistic consistency \u2014 a blend of traditional Chinese ink painting aesthetics with cinematic AI imagery. Motion sequences were generated and extended using Runway\u2019s Gen-2 model, then assembled and color-graded in Premiere Pro.",
       },
       {
-        heading: "AI Tools Used",
+        heading: "使用的 AI 工具",
         content: [
           "Midjourney v6 \u2014 Visual concept generation, keyframe illustration, style consistency",
           "Adobe Premiere Pro \u2014 Final edit, color grading, audio synchronization",
         ],
       },
       {
-        heading: "Key Reflections",
+        heading: "关键反思",
         content:
-          "The project revealed both the extraordinary potential and the inherent limitations of AI as a storytelling medium. Generative tools excel at producing evocative imagery but require significant human curation to maintain narrative coherence. The most successful sequences emerged from a dialogue between human creative intent and machine interpretation.",
+          "该项目揭示了 AI 作为叙事媒介的非凡潜力及其固有的局限性。生成式工具擅长产生引人入胜的图像，但需要大量的人工策划来保持叙事的连贯性。最成功的片段源于人类创作意图与机器解释之间的对话。",
       },
     ],
   },
   {
     id: "ar-glasses",
     number: "02",
-    title: "AR Smart Glasses for Accessible Communication",
+    title: "用于无障碍沟通的 AR 智能眼镜",
     subtitle: "Product Design \u00b7 Accessibility",
     category: "UX Design \u00b7 AR \u00b7 Accessibility",
-    tags: ["Figma", "AR Design", "Accessibility", "HCI", "User Research"],
+    tags: ["Figma", "AR 设计", "无障碍", "人机交互", "用户研究"],
     image: AR_IMG,
     figmaUrl:
       "https://www.figma.com/design/c1eWMiGvEb4mGvNKIipsMO/SignBridge-Duo?node-id=2029-194&t=12jiwQPy3RzOWFAj-1",
     videoUrl:
       "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663409787492/FepmhXmgiSgBpmVC.mov?Expires=1804362333&Signature=czjh9gLDj4tX5-XxYAcLmx7Zz9IkCA35RJaeN6ChyoCXyfl~JhUEVE2Ij~uvIIx2ZoFyfxDz9odPsqhX5WUKDMefVCw5eONTiXnx6kAhMS8HknJANnPY9ghwD5h1bYSWsG4MaF5ZhyqxZopVric6KW4qeK1kHC36KqDTqwun1bOHV-URuz5Q3~ZDfmFd-75kePR7ONKr0Azs40LUtpYoYLTXp7QO9e4jXtmxBI7xzJr8T-AVVVugNYvU--15U~4tzYRCEf3a4SJaARVjMpJrnmjyKB7AOhIUQNL2tNUXadqnUPA06cJVfe~-yOX9tIS-JMbamu-lwqgtfLEBaGX9Bg__&Key-Pair-Id=K2HSFNDJXOU9YS",
     summary:
-      "A product design project focused on improving real-time communication for hearing-impaired users through AR smart glasses with live transcription and gesture interaction.",
+      "一个专注于通过带有实时转录和手势交互的 AR 智能眼镜改善听障用户实时沟通的产品设计项目。",
     details: [
       {
-        heading: "Problem Definition",
+        heading: "问题定义",
         content:
-          "Deaf and hard-of-hearing individuals face persistent communication barriers when interacting with hearing people in everyday environments such as workplaces, classrooms, and public services. While interpreters and written notes can help, they are often unavailable, slow, or socially disruptive to natural conversation flow. Existing assistive technologies also tend to focus on one-directional accessibility, either translating speech to text or supporting hearing through amplification.\n\nThis project explores whether AR-assisted communication tools can enable seamless, bidirectional interaction between Deaf and hearing users, allowing conversations to unfold naturally without requiring interpreters or specialized environments.",
+          "聋人和重听人士在工作场所、教室和公共服务等日常环境中与听力正常的人互动时，面临着持续的沟通障碍。虽然手语翻译和书面笔记可以提供帮助，但它们通常不可用、速度慢，或者在社交上会破坏自然的对话流程。现有的辅助技术也倾向于关注单向的无障碍性，要么将语音翻译成文本，要么通过放大来支持听力。\n\n本项目探索 AR 辅助沟通工具是否能够实现聋人和听力正常用户之间的无缝双向互动，让对话自然展开，而无需翻译或专门的环境。",
       },
       {
-        heading: "Target Users",
+        heading: "目标用户",
         content:
           "The primary users are Deaf and hard-of-hearing individuals who regularly interact with hearing people in educational, professional, and social contexts.\n\nSecondary users include hearing communication partners \u2014 colleagues, classmates, service workers, and friends \u2014 whose participation is essential for enabling fluid two-way communication.",
       },
       {
-        heading: "Product Concept",
+        heading: "产品概念",
         content:
           "AR Glasses is a pair of lightweight AR smart glasses designed to bridge communication between sign language users and spoken language users in real time.\n\nThe system combines speech recognition, sign language recognition, and AR subtitle display to enable natural conversation between Deaf and hearing participants.\n\nThe glasses connect to a companion smartphone app that processes AI models and manages system settings, while the AR interface presents information directly within the wearer\u2019s field of view.",
       },
       {
-        heading: "Key Features",
+        heading: "主要功能",
         content: [
           "Bidirectional communication translation: Speech \u2192 real-time subtitles displayed in the AR view; Sign language \u2192 translated into text or synthesized speech for hearing participants.",
           "Contextual subtitle placement: Spoken language appears as floating captions positioned near the speaker\u2019s face in the AR field of view, reducing gaze shifting during conversations.",
-          "AI-powered sign language recognition: Computer vision models detect hand gestures and translate sign language into readable text or audio output.",
-          "Speaker identification: Color-coded subtitles distinguish multiple speakers in group conversations.",
-          "Hands-free interaction: Simple gesture controls allow users to replay the last sentence, pause transcription, or adjust settings without using a phone.",
-          "Environmental awareness: Visual indicators notify users of important ambient sounds such as alarms, doorbells, or approaching vehicles.",
+          "AI 驱动的手语识别：计算机视觉模型检测手势并将手语翻译成可读文本或音频输出。",
+          "说话者识别：颜色编码的字幕在群组对话中区分多个说话者。",
+          "免提交互：简单的手势控制允许用户重放最后一句话、暂停转录或调整设置，而无需使用手机。",
+          "环境感知：视觉指示器通知用户重要的环境声音，如警报、门铃或驶近的车辆。",
         ],
       },
       {
-        heading: "Figma Prototype & Interaction Design",
+        heading: "Figma 原型与交互设计",
         content:
           "The interaction design was prototyped in Figma, focusing on three key flows:\n\nInitial setup and calibration \u2014 pairing the glasses with the mobile app and configuring subtitle preferences.\n\nReal-time conversation mode \u2014 displaying subtitles and sign translations during live interactions.\n\nSettings and accessibility customization \u2014 adjusting text size, subtitle placement, and notification preferences.\n\nThe visual design emphasizes clarity and low cognitive load. High-contrast typography, controlled color coding for speakers, and minimal visual clutter help maintain readability without overwhelming the user\u2019s field of view.",
       },
       {
-        heading: "User Scenario",
+        heading: "用户场景",
         content:
           "Sarah, 28, is attending a team meeting at her workplace. As colleagues speak, their words appear as floating subtitles in her AR view, positioned near each speaker\u2019s face. When her manager asks a question, Sarah uses a subtle thumb-and-index pinch gesture to replay the last sentence. The system\u2019s speaker identification displays each person\u2019s words in a distinct color, making multi-person conversations easy to follow.",
       },
       {
-        heading: "Reflection",
+        heading: "反思",
         content:
           "This project reinforced the importance of designing for dignity alongside functionality. Early prototypes prioritized technical capability but felt clinical and othering. Subsequent iterations focused on making the glasses visually indistinguishable from regular eyewear, and on ensuring the interaction model was as discreet as possible \u2014 respecting the user\u2019s desire to participate in social situations without drawing attention to their assistive technology.",
       },
       {
-        heading: "Process Documentation",
+        heading: "过程文档",
         content:
-          "Full design process documentation including low-fidelity prototype exploration and updated vertical prototype with new features.",
+          "完整的设计过程文档，包括低保真原型探索和带有新功能的更新的垂直原型。",
         pdfAttachments: [
           {
             label: "HW4 \u2014 Developing Low-Fidelity Prototypes",
@@ -164,12 +164,12 @@ const projects: Project[] = [
       "An AI-powered travel planning app that generates personalized itineraries, interactive map routes, and film location tours for any city in the world \u2014 built entirely through vibe coding with DeepSeek.",
     details: [
       {
-        heading: "What It Does",
+        heading: "它的功能",
         content:
           "CineRoute lets you type any city and instantly generates a full travel experience: 12 curated attractions with real GPS coordinates, a smart multi-day itinerary optimized by geography, and a Cinema Mode that traces the actual filming locations of movies set in that city \u2014 all visualized on an interactive map.",
       },
       {
-        heading: "Key Features",
+        heading: "主要功能",
         content: [
           "AI City Explorer \u2014 Enter any city to get 12 curated attractions with descriptions, ratings, visit duration, and real map coordinates.",
           "Smart Itinerary Planner \u2014 Select attractions and choose 1\u20137 days; AI clusters stops geographically to minimize travel time.",
@@ -180,12 +180,12 @@ const projects: Project[] = [
         ],
       },
       {
-        heading: "How It Was Built",
+        heading: "它是如何构建的",
         content:
           "This project was built entirely through vibe coding \u2014 iterating rapidly with AI assistance to go from idea to working product. The stack is intentionally minimal: a single HTML file with vanilla JavaScript, Leaflet.js for maps, and the DeepSeek API for all AI generation. No frameworks, no build steps, no backend.",
       },
       {
-        heading: "Technical Highlights",
+        heading: "技术亮点",
         content: [
           "Single-file architecture \u2014 entire app in one HTML file, zero dependencies beyond Leaflet CDN.",
           "Structured AI prompting \u2014 DeepSeek returns strict JSON with GPS coordinates, enabling direct map rendering.",
@@ -195,7 +195,7 @@ const projects: Project[] = [
         ],
       },
       {
-        heading: "Reflection",
+        heading: "反思",
         content:
           "CineRoute was an experiment in how far vibe coding can take a product idea. Starting from a simple prompt, the app grew through rapid iteration \u2014 each feature added in response to what was missing from the previous version. The most interesting challenge was designing AI prompts that return structured, map-renderable data reliably, and handling the inevitable edge cases where the model returns imperfect JSON.",
       },
@@ -207,23 +207,23 @@ const projects: Project[] = [
     title: "SubwayPose",
     subtitle: "Urban Safety \u00b7 Product Concept",
     category: "Product Design \u00b7 Urban Tech \u00b7 User Research",
-    tags: ["User Research", "Figma", "MasterGo", "Urban Design", "Safety"],
+    tags: ["用户研究", "Figma", "MasterGo", "城市设计", "安全"],
     image: SUBWAY_IMG,
     summary:
-      "A concept product designed to improve safety awareness and information clarity in the NYC subway system, grounded in user interviews and commuter research.",
+      "一款旨在提高纽约地铁系统安全意识和信息清晰度的概念产品，基于用户访谈和通勤者研究。",
     details: [
       {
-        heading: "Research Background",
+        heading: "研究背景",
         content:
           "New York City\u2019s subway system carries over 3.5 million passengers daily, yet remains plagued by unclear announcements, unpredictable service disruptions, and persistent safety anxieties \u2014 particularly for new residents, tourists, and vulnerable populations. This project began with a question: why does one of the world\u2019s most extensive transit systems still feel so opaque to its users?",
       },
       {
-        heading: "User Interviews & Insights",
+        heading: "用户访谈与洞察",
         content:
           "Twelve in-depth interviews were conducted with daily subway commuters across diverse demographics \u2014 recent immigrants, elderly riders, young professionals, and tourists. Key themes emerged consistently: anxiety about personal safety, frustration with inaudible or confusing announcements, and difficulty gauging crowd levels before boarding. Participants described a persistent sense of information asymmetry \u2014 the system knew things they didn\u2019t.",
       },
       {
-        heading: "Key Problems Identified",
+        heading: "发现的关键问题",
         content: [
           "Unclear announcements \u2014 over 70% of interviewees reported regularly missing or misunderstanding PA announcements",
           "Safety anxiety \u2014 particularly acute for solo travelers and women commuting late at night",
@@ -232,12 +232,12 @@ const projects: Project[] = [
         ],
       },
       {
-        heading: "Product Concept",
+        heading: "产品概念",
         content:
           "SubwayPose is a mobile application and platform screen door integration that provides commuters with real-time, contextual safety and service information. The name references the act of positioning oneself safely on a platform \u2014 a small but significant moment of urban navigation that the product aims to support.",
       },
       {
-        heading: "Core Features",
+        heading: "核心功能",
         content: [
           "Real-time safety alerts \u2014 crowd-sourced and sensor-based incident reporting with severity indicators",
           "Crowd level visualization \u2014 car-by-car occupancy display updated in real time via computer vision",
@@ -247,12 +247,12 @@ const projects: Project[] = [
         ],
       },
       {
-        heading: "Product Prototype",
+        heading: "产品原型",
         content:
           "The prototype was built in MasterGo and Figma, covering the core commuter journey from trip planning through platform arrival to boarding. The visual design uses a dark mode interface optimized for low-light subway environments, with a clear typographic hierarchy and color-coded safety indicators. Accessibility was a primary constraint \u2014 all features are operable with one hand and compatible with screen readers.",
       },
       {
-        heading: "Design Reflections",
+        heading: "设计反思",
         content:
           "The most challenging design decision was determining what information to surface by default versus on demand. Information overload can increase anxiety rather than reduce it. The final design philosophy: show only the most critical safety information by default, with progressive disclosure for users who want more detail. The product should feel like a calm, knowledgeable companion \u2014 not an alarm system.",
       },
@@ -433,7 +433,7 @@ function ProjectCard({
                       color: "#C4603A",
                     }}
                   >
-                    Live Demo
+                    在线演示
                   </h4>
                 </div>
                 <a
@@ -472,7 +472,7 @@ function ProjectCard({
                       color: "#C4603A",
                     }}
                   >
-                    Interactive Prototype
+                    交互式原型
                   </h4>
                 </div>
                 <div
@@ -496,7 +496,7 @@ function ProjectCard({
                     color: "#9B9590",
                   }}
                 >
-                  Open in{" "}
+                  在{" "}
                   <a
                     href={project.figmaUrl}
                     target="_blank"
@@ -523,7 +523,7 @@ function ProjectCard({
                       color: "#C4603A",
                     }}
                   >
-                    {project.videoUrl?.includes("bilibili") ? "Watch the Film" : "Product Launch Video"}
+                    {project.videoUrl?.includes("bilibili") ? "观看影片" : "产品发布视频"}
                   </h4>
                 </div>
                 <div className="relative w-full bg-black" style={{ aspectRatio: "16/9" }}>
@@ -559,7 +559,7 @@ function ProjectCard({
                 >
                   {project.videoUrl?.includes("bilibili") ? (
                     <>
-                      Also available on{" "}
+                      也可以在{" "}
                       <a
                         href={project.videoUrl}
                         target="_blank"

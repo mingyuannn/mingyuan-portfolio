@@ -7,10 +7,10 @@ import { useEffect, useRef } from "react";
 const ABOUT_TEXTURE = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663409787492/ikqfBWvmbNXZGOSW.jpg?Expires=1804359425&Signature=jaEtRT4ZSYOYPXrAIa12GQbinrUAdGoqRuOTkEoGuLoHxMBz87XcX0kDXIjGT6URKZEWUx9VAeqK0ZBr-k~MeuDnERXr8fdY4c6X~vHBua0DZrRE5NUA3nwaW2CyC6incelVz9wYxu3pOozoOfcOBypWwuqbkXtkZerVtYQ1IeQ3fhQuF8jyNuCj6ENbxtwZG8vU-TtYP5tXdDLot27FnswDM3tz5A5DXR7znII51P8xqGZc9ppIjqIZxWoR4CVf5r4Y-7~ossE1MvivfaoT5eqqBM4JbCZKc6DoDriF1fnShYplkYq332NL9PHOxfHtolrQh-4Cbo06TYryzV~hwg__&Key-Pair-Id=K2HSFNDJXOU9YS";
 
 const highlights = [
-  { label: "Focus", value: "Human-Computer Interaction" },
-  { label: "University", value: "Cornell University" },
-  { label: "Program", value: "M.S. Information Science" },
-  { label: "Location", value: "New York City, New York" },
+  { label: "专注领域", value: "人机交互" },
+  { label: "大学", value: "康奈尔大学" },
+  { label: "项目", value: "信息科学硕士" },
+  { label: "地点", value: "纽约州纽约市" },
 ];
 
 export default function AboutSection() {
@@ -44,7 +44,7 @@ export default function AboutSection() {
         {/* Section header */}
         <div className="flex items-center gap-4 mb-16 reveal">
           <div className="accent-line" />
-          <span className="mono-label text-[#9B9590]">About</span>
+          <span className="mono-label text-[#9B9590]">关于</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -54,29 +54,18 @@ export default function AboutSection() {
               className="display-headline text-[#1A1A18] mb-8 reveal"
               style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
             >
-              Designing at the
-              <br />
-              intersection of{" "}
-              <span className="italic text-[#C4603A]">AI &amp; humanity.</span>
+              在<span className="italic text-[#C4603A]">人工智能与人性</span>的<br />交汇处进行设计。
             </h2>
 
             <div className="space-y-5 reveal">
               <p className="font-['DM_Sans'] text-[#52504A] leading-[1.85] text-base">
-                I'm a graduate student at Cornell University pursuing a Master's in
-                Information Science, with a deep focus on human-computer interaction,
-                AI applications, and creative technology. My background spans media
-                production, product design, and user research.
+                我是康奈尔大学信息科学专业的硕士研究生，专注于人机交互、人工智能应用和创意技术。我的背景涵盖媒体制作、产品设计和用户研究。
               </p>
               <p className="font-['DM_Sans'] text-[#52504A] leading-[1.85] text-base">
-                My work lives at the intersection of storytelling and technology. I've
-                built AI-generated short films that reinterpret ancient Chinese myths,
-                designed AR accessibility tools for hearing-impaired users, and
-                conducted user research to reimagine urban transit experiences.
+                我的工作处于叙事与技术的交汇点。我制作了重新诠释中国古代神话的 AI 生成短片，为听障用户设计了 AR 无障碍工具，并进行了用户研究以重塑城市交通体验。
               </p>
               <p className="font-['DM_Sans'] text-[#52504A] leading-[1.85] text-base">
-                I believe the best products are those that feel deeply human — even
-                when powered by the most advanced AI. My design philosophy centers on
-                empathy, clarity, and the quiet power of well-considered details.
+                我相信最好的产品是那些让人感觉深刻人性化的产品——即使是由最先进的 AI 驱动。我的设计理念以同理心、清晰度以及深思熟虑的细节所带来的安静力量为中心。
               </p>
             </div>
 
@@ -85,7 +74,7 @@ export default function AboutSection() {
                 href="mailto:mp2335@cornell.edu"
                 className="group inline-flex items-center gap-3 font-['DM_Mono'] text-xs tracking-[0.1em] uppercase text-[#C4603A] border-b border-[#C4603A]/40 pb-1 transition-all duration-300 hover:border-[#C4603A]"
               >
-                Get in touch
+                联系我
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
             </div>

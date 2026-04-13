@@ -2,7 +2,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import CustomCursor from "./components/CustomCursor";
 import PageIntro from "./components/PageIntro";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -34,7 +33,6 @@ function App() {
       >
         <TooltipProvider>
           <PageIntro />
-          <CustomCursor />
           <Toaster />
           <Router />
         </TooltipProvider>

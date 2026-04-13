@@ -276,9 +276,9 @@ html {
 }
 
 /* ── Image Reveal Wipe Animation ── */
-@keyframes wipe-reveal {
-  0%   { clip-path: inset(0 100% 0 0); }
-  100% { clip-path: inset(0 0%   0 0); }
+@keyframes wipe-mask-out {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(101%); }
 }
 
 @keyframes wipe-sheen {
@@ -289,13 +289,25 @@ html {
 .img-wipe-wrapper {
   position: relative;
   overflow: hidden;
-  clip-path: inset(0 100% 0 0);
 }
 
-.img-wipe-wrapper.wipe-done {
-  animation: wipe-reveal 0.95s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+/* Dark overlay that slides away to reveal the image */
+.img-wipe-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1A1A18;
+  z-index: 5;
+  transform: translateX(0%);
+  transition: none;
+  pointer-events: none;
 }
 
+.img-wipe-wrapper.wipe-done::before {
+  animation: wipe-mask-out 0.95s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+/* Light sheen after wipe */
 .img-wipe-wrapper.wipe-done::after {
   content: "";
   position: absolute;
@@ -309,4 +321,5 @@ html {
   animation: wipe-sheen 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
   pointer-events: none;
   z-index: 10;
+  opacity: 0;
 }

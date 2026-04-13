@@ -1,15 +1,62 @@
 /*
   Design: Editorial Minimalism meets Japanese Wabi-Sabi — Hero Section
   Full-viewport hero with animated text reveal, editorial asymmetric layout,
-  terracotta accent, background texture image (right side) + mouse parallax
+  terracotta accent, background texture image (right side) + mouse parallax,
+  typewriter cycling title animation.
 */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQcem2UYFzT3RtPotqe/hero-bg-4WzmcTnCLEkWn9mg33amP7.webp";
+
+// Titles that cycle with typewriter effect
+const TITLES = [
+  "AI 产品与创意技术设计师",
+  "用户体验研究者",
+  "创意技术探索者",
+  "叙事与交互设计师",
+];
+
+function useTypewriter(texts: string[], typingSpeed = 60, deletingSpeed = 35, pauseMs = 2200) {
+  const [displayed, setDisplayed] = useState("");
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+
+  // Blinking cursor
+  useEffect(() => {
+    const id = setInterval(() => setShowCursor((v) => !v), 530);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const current = texts[titleIndex];
+
+    if (!isDeleting && displayed === current) {
+      // Pause before deleting
+      const t = setTimeout(() => setIsDeleting(true), pauseMs);
+      return () => clearTimeout(t);
+    }
+
+    if (isDeleting && displayed === "") {
+      setIsDeleting(false);
+      setTitleIndex((i) => (i + 1) % texts.length);
+      return;
+    }
+
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    const t = setTimeout(() => {
+      setDisplayed(isDeleting ? current.slice(0, displayed.length - 1) : current.slice(0, displayed.length + 1));
+    }, speed);
+    return () => clearTimeout(t);
+  }, [displayed, isDeleting, titleIndex, texts, typingSpeed, deletingSpeed, pauseMs]);
+
+  return { displayed, showCursor };
+}
 
 export default function HeroSection() {
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const { displayed, showCursor } = useTypewriter(TITLES);
 
   // Entrance animation
   useEffect(() => {
@@ -140,20 +187,34 @@ export default function HeroSection() {
             <span style={{ fontStyle: "italic", color: "#C4603A" }}>Pang.</span>
           </h1>
 
-          {/* Title */}
-          <p
-            className="animate-in"
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 300,
-              fontSize: "clamp(1.1rem, 2.2vw, 1.5rem)",
-              letterSpacing: "-0.01em",
-              color: "#1A1A18",
-              marginBottom: "1.75rem",
-            }}
-          >
-            AI 产品与创意技术设计师
-          </p>
+          {/* Typewriter cycling title */}
+          <div className="animate-in" style={{ marginBottom: "1.75rem", minHeight: "2.2rem" }}>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 300,
+                fontSize: "clamp(1.1rem, 2.2vw, 1.5rem)",
+                letterSpacing: "-0.01em",
+                color: "#1A1A18",
+                display: "inline",
+              }}
+            >
+              {displayed}
+            </p>
+            {/* Blinking cursor */}
+            <span
+              style={{
+                display: "inline-block",
+                width: "2px",
+                height: "1.2em",
+                backgroundColor: "#C4603A",
+                marginLeft: "2px",
+                verticalAlign: "text-bottom",
+                opacity: showCursor ? 1 : 0,
+                transition: "opacity 0.1s",
+              }}
+            />
+          </div>
 
           {/* Thin divider */}
           <div className="animate-in w-full h-px bg-[#E8E4DC] mb-7" />

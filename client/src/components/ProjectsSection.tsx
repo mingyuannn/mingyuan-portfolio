@@ -5,7 +5,7 @@
 */
 import { useState, useEffect, useRef } from "react";
 
-const DAYU_IMG = "https://private-us-east-1.manuscdn.com/user_upload_by_module/session_file/310519663409787492/icMMOoDLKrLYXtbJ.jpg?Expires=1804358120&Signature=E7TcgKCXnshOWjDZ5wa3u6hPSd5mtUG9w2V6ItOhWjeHT7CytHO1Fg1j~B3BMvk90OKhRMgn2pIYummhVFo-4IerdOJKLinveSjLhM4zcCgfqde8npB7exffP-FYyvnhrXKYHQ5EghcJ5YY8Uo8bh5rdB37v-VCd6VltHh86KTe8tzAWsytydBBvB~7OpNoiQjUrn1nQEbSMYVOGCdmzvlAC43yEBIop1O2FLrCWhQ5IE2Esggw5J~x92-ovhS31rdlwqTuzSf5A8WsO6YU-nGGGyFyQQMqLg6kTLUNAC~ZXKEN7X0AUX3wDEQHtJc0JsiFa3j0HCcL8u6VX4fNsiw__&Key-Pair-Id=K2HSFNDJXOU9YS";
+const DAYU_IMG = "/dayu-cover.jpg";
 const AR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQcem2UYFzT3RtPotqe/project-ar-glasses-YRV9yH3xbmHv354X6ZLB9t.webp";
 const SUBWAY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQcem2UYFzT3RtPotqe/project-subway-kGsaGMdF3bSKKVmVbWvXxz.webp";
 const CINEROUTE_IMG = "/imageofcine.jpg";

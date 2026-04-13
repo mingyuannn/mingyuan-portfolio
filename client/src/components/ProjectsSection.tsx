@@ -402,22 +402,7 @@ function ProjectCard({
               </h3>
             </div>
 
-            {/* Right: category label */}
-            <div className="hidden lg:flex items-center px-6 border-l border-[#E8E4DC]">
-              <p
-                style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "#9B9590",
-                  writingMode: "vertical-rl",
-                  transform: "rotate(180deg)",
-                }}
-              >
-                {project.category}
-              </p>
-            </div>
+
           </div>
 
           {/* Bottom row: summary + expand hint */}

@@ -25,7 +25,7 @@ export default function ContactSection() {
     return () => observer.disconnect();
   }, []);
 
-  const handle复制Email = () => {
+  const handleCopyEmail = () => {
     navigator.clipboard.writeText("mp2335@cornell.edu").then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
@@ -79,7 +79,7 @@ export default function ContactSection() {
                     mp2335@cornell.edu
                   </a>
                   <button
-                    onClick={handle复制Email}
+                    onClick={handleCopyEmail}
                     className="font-['DM_Mono'] text-[0.65rem] tracking-[0.08em] uppercase px-3 py-1.5 border border-[#E8E4DC] text-[#9B9590] hover:border-[#C4603A] hover:text-[#C4603A] transition-all duration-300"
                   >
                     {copied ? "已复制！" : "复制"}
@@ -155,7 +155,7 @@ export default function ContactSection() {
 
             <div className="flex flex-col sm:items-end gap-2">
               <p className="font-['DM_Mono'] text-[0.65rem] tracking-[0.08em] uppercase text-white/30">
-                康奈尔大学 · M.S. Information Science
+                康奈尔大学 · 信息科学硕士
               </p>
               <p className="font-['DM_Mono'] text-[0.65rem] tracking-[0.08em] uppercase text-white/20">
                 © {new Date().getFullYear()} Mingyuan Pang

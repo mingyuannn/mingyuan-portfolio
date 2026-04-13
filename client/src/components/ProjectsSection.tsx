@@ -271,6 +271,7 @@ function ProjectCard({
   onToggle: () => void;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const imgWipeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -289,6 +290,26 @@ function ProjectCard({
     return () => observer.disconnect();
   }, [index]);
 
+  useEffect(() => {
+    const el = imgWipeRef.current;
+    if (!el) return;
+    const wipeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              el.classList.add("wipe-done");
+            }, index * 150 + 100);
+            wipeObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    wipeObserver.observe(el);
+    return () => wipeObserver.disconnect();
+  }, [index]);
+
   return (
     <div ref={cardRef} className="reveal">
       {/* Project card */}
@@ -299,7 +320,7 @@ function ProjectCard({
         onClick={onToggle}
       >
         {/* Image */}
-        <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
+        <div ref={imgWipeRef} className="img-wipe-wrapper" style={{ aspectRatio: "16/9" }}>
           <img
             src={project.image}
             alt={project.title}

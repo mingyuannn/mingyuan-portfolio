@@ -274,3 +274,39 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.55 0.12 40);
 }
+
+/* ── Image Reveal Wipe Animation ── */
+@keyframes wipe-reveal {
+  0%   { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0%   0 0); }
+}
+
+@keyframes wipe-sheen {
+  0%   { transform: translateX(-120%); opacity: 0.5; }
+  100% { transform: translateX(220%);  opacity: 0; }
+}
+
+.img-wipe-wrapper {
+  position: relative;
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+}
+
+.img-wipe-wrapper.wipe-done {
+  animation: wipe-reveal 0.95s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+.img-wipe-wrapper.wipe-done::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 70%
+  );
+  animation: wipe-sheen 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+  pointer-events: none;
+  z-index: 10;
+}

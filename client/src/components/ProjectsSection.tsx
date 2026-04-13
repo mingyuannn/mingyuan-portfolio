@@ -180,12 +180,12 @@ const projects: Project[] = [
       {
         heading: "它是如何构建的",
         content:
-          "该项目完全通过 vibe coding 构建——在 AI 的协助下快速迭代，从想法到工作产品。技术栈有意保持极简：一个包含原生 JavaScript 的 HTML 文件、用于地图的 Leaflet.js，以及用于所有 AI 生成的 DeepSeek API。没有框架，没有构建步骤，没有后端。",
+          "该项目完全通过 vibe coding 构建——在 AI 的协助下快速迭代，从想法到工作产品。前端为一个包含原生 JavaScript 的单一 HTML 文件，配合 Leaflet.js 实现地图渲染；后端为 Node.js （server.js），负责代理 DeepSeek API 请求并保护 API 密钥。整体架构轻量且无需构建步骤，部署在 Railway 上。",
       },
       {
         heading: "技术亮点",
         content: [
-          "单文件架构 — 整个应用在一个 HTML 文件中，除了 Leaflet CDN 之外零依赖。",
+          "前后端分离架构 — 前端单一 HTML 文件，后端 Node.js 代理层保护 API 密钥，部署在 Railway 上。",
           "结构化 AI 提示 — DeepSeek 返回带有 GPS 坐标的严格 JSON，从而实现直接的地图渲染。",
           "半正矢距离计算 — 在客户端计算站点之间的真实世界距离。",
           "拖放式行程编辑 — 带有实时地图同步的原生 HTML5 拖放 API。",

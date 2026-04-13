@@ -298,11 +298,11 @@ function ProjectCard({
         onClick={onToggle}
       >
         {/* Image */}
-        <div className="relative overflow-hidden" style={{ aspectRatio: "16/7" }}>
+        <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.06] group-hover:brightness-110"
           />
           <div className="img-overlay" />
 
@@ -340,7 +340,7 @@ function ProjectCard({
           </div>
 
           {/* Expand button */}
-          <div className="absolute top-6 right-6 w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C4603A]/80 group-hover:border-[#C4603A]">
+          <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C4603A]/90 group-hover:border-[#C4603A] group-hover:scale-110">
             <span
               className="text-white text-xl leading-none transition-transform duration-300"
               style={{ transform: isExpanded ? "rotate(45deg)" : "rotate(0deg)" }}

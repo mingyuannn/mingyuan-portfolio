@@ -113,7 +113,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Skills grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5">
           {skillCategories.map((category, catIdx) => (
             <div
               key={category.id}
@@ -135,8 +135,8 @@ export default function SkillsSection() {
               {/* Divider */}
               <div className="w-full h-px bg-white/10 mb-8" />
 
-              {/* Skills list */}
-              <div className="space-y-6">
+              {/* Skills list — two-column grid */}
+              <div className="grid grid-cols-2 gap-x-6 gap-y-5">
                 {category.skills.map((skill, skillIdx) => (
                   <div key={skillIdx}>
                     <p className="font-['DM_Sans'] font-medium text-white text-sm mb-1">

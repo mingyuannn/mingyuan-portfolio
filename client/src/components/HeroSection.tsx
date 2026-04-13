@@ -1,7 +1,7 @@
 /*
   Design: Editorial Minimalism meets Japanese Wabi-Sabi — Hero Section
   Full-viewport hero with animated text reveal, editorial asymmetric layout,
-  terracotta accent, background texture image (right side)
+  terracotta accent, background texture image (right side) + mouse parallax
 */
 import { useEffect, useRef } from "react";
 
@@ -9,7 +9,9 @@ const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQc
 
 export default function HeroSection() {
   const contentRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
+  // Entrance animation
   useEffect(() => {
     const elements = contentRef.current?.querySelectorAll(".animate-in");
     elements?.forEach((el, i) => {
@@ -24,27 +26,46 @@ export default function HeroSection() {
     });
   }, []);
 
+  // Mouse parallax effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!bgRef.current) return;
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 18;
+      const y = (e.clientY / innerHeight - 0.5) * 12;
+      bgRef.current.style.transform = `translate(${x}px, ${y}px) scale(1.06)`;
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col overflow-hidden bg-[#F7F5F0]"
     >
-      {/* Right-side background image */}
-      <div
-        className="absolute top-0 right-0 bottom-0 w-1/2 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${HERO_BG})`,
-          opacity: 0.35,
-          maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
-          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)",
-        }}
-      />
+      {/* Right-side background image with parallax */}
+      <div className="absolute top-0 right-0 bottom-0 w-1/2 overflow-hidden">
+        <div
+          ref={bgRef}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${HERO_BG})`,
+            opacity: 0.6,
+            maskImage: "linear-gradient(to right, transparent 0%, black 40%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 40%)",
+            transition: "transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            willChange: "transform",
+          }}
+        />
+      </div>
+
       {/* Subtle warm overlay */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(105deg, #F7F5F0 50%, rgba(247,245,240,0.85) 70%, rgba(240,235,227,0.6) 100%)",
+            "linear-gradient(105deg, #F7F5F0 50%, rgba(247,245,240,0.82) 70%, rgba(240,235,227,0.55) 100%)",
         }}
       />
 
@@ -56,7 +77,7 @@ export default function HeroSection() {
             fontWeight: 900,
             fontSize: "clamp(8rem, 22vw, 22rem)",
             lineHeight: 0.85,
-            color: "rgba(26,26,24,0.04)",
+            color: "rgba(26,26,24,0.07)",
             letterSpacing: "-0.04em",
             display: "block",
           }}
@@ -97,11 +118,25 @@ export default function HeroSection() {
               lineHeight: 1.0,
               letterSpacing: "-0.03em",
               color: "#1A1A18",
-              marginBottom: "1rem",
+              marginBottom: "0.6rem",
             }}
           >
             Mingyuan
-            <br />
+          </h1>
+          {/* Thin version break line */}
+          <div className="animate-in w-24 h-px bg-[#C4603A]/40 mb-3" />
+          <h1
+            className="animate-in"
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontWeight: 700,
+              fontSize: "clamp(3.5rem, 9vw, 8rem)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.03em",
+              color: "#1A1A18",
+              marginBottom: "1rem",
+            }}
+          >
             <span style={{ fontStyle: "italic", color: "#C4603A" }}>Pang.</span>
           </h1>
 

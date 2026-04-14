@@ -340,6 +340,68 @@ function DesktopInner() {
             </div>
           );
         })}
+
+        {/* ── Dock Separator ── */}
+        <div style={{
+          width: "1px",
+          height: "42px",
+          background: "rgba(255,255,255,0.25)",
+          margin: "0 4px 8px",
+          alignSelf: "flex-end",
+          flexShrink: 0,
+        }} />
+
+        {/* ── Traditional version shortcut ── */}
+        <div
+          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", position: "relative" }}
+          onMouseEnter={() => setHoveredDock("__home__" as AppId)}
+          onMouseLeave={() => setHoveredDock(null)}
+        >
+          {hoveredDock === ("__home__" as AppId) && (
+            <div style={{
+              position: "absolute", bottom: "calc(100% + 8px)",
+              background: "rgba(30,30,30,0.85)", color: "#fff",
+              fontSize: "11px", padding: "3px 8px", borderRadius: "5px",
+              whiteSpace: "nowrap", pointerEvents: "none",
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+            }}>
+              传统版
+            </div>
+          )}
+          <a
+            href="/home"
+            style={{
+              width: hoveredDock === ("__home__" as AppId) ? 62 : 52,
+              height: hoveredDock === ("__home__" as AppId) ? 62 : 52,
+              transition: "width 0.15s ease, height 0.15s ease",
+              cursor: "pointer",
+              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.35))",
+              display: "block",
+              textDecoration: "none",
+              flexShrink: 0,
+            }}
+          >
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+              <rect width="60" height="60" rx="13" fill="url(#safariGrad)"/>
+              <defs>
+                <linearGradient id="safariGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#34C8E8"/>
+                  <stop offset="1" stopColor="#0A84FF"/>
+                </linearGradient>
+              </defs>
+              {/* Compass circle */}
+              <circle cx="30" cy="30" r="16" stroke="rgba(255,255,255,0.9)" strokeWidth="1.5" fill="none"/>
+              {/* Compass needle N */}
+              <polygon points="30,16 27,30 30,28 33,30" fill="#FF3B30"/>
+              {/* Compass needle S */}
+              <polygon points="30,44 27,30 30,32 33,30" fill="rgba(255,255,255,0.85)"/>
+              {/* Center dot */}
+              <circle cx="30" cy="30" r="2" fill="#fff"/>
+            </svg>
+          </a>
+          {/* No dot for home link */}
+          <div style={{ width: "4px", height: "4px" }} />
+        </div>
       </div>
     </div>
   );

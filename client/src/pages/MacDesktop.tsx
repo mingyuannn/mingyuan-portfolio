@@ -175,7 +175,7 @@ function DesktopInner() {
         {([
           { label: "关于我", appId: "notes" as AppId },
           { label: "项目",   appId: "finder" as AppId },
-          { label: "技能",   appId: "notes" as AppId },
+          { label: "简历",   appId: "preview" as AppId },
           { label: "联系",   appId: "mail" as AppId },
         ] as { label: string; appId: AppId }[]).map((item) => (
           <span

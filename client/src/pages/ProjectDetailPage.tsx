@@ -52,17 +52,18 @@ export default function ProjectDetailPage() {
   return (
     <div className="min-h-screen bg-[#F7F5F0]">
       {/* Back navigation */}
-      <div className="sticky top-0 z-40 bg-[#F7F5F0]/90 backdrop-blur-sm border-b border-[#E8E4DC]">
+      <div className="sticky top-0 z-40 bg-[#F7F5F0]/95 backdrop-blur-sm border-b border-[#C8C3BB]">
         <div className="container py-4 flex items-center justify-between">
           <button
             onClick={() => navigate("/#projects")}
             className="flex items-center gap-2 transition-colors duration-200 hover:text-[#C4603A]"
             style={{
               fontFamily: "'DM Mono', monospace",
-              fontSize: "0.7rem",
+              fontSize: "0.8rem",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: "#9B9590",
+              color: "#3A3A38",
+              fontWeight: 600,
             }}
           >
             <span>←</span>
@@ -73,10 +74,11 @@ export default function ProjectDetailPage() {
             <span
               style={{
                 fontFamily: "'DM Mono', monospace",
-                fontSize: "0.65rem",
+                fontSize: "0.75rem",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#9B9590",
+                color: "#5A5A58",
+                fontWeight: 500,
               }}
             >
               {project.number} / {project.category}
@@ -157,14 +159,15 @@ export default function ProjectDetailPage() {
                   href={project.videoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A]"
+                  className="inline-flex items-center gap-2 px-5 py-3 border-2 transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A] hover:bg-[#FDF5F0]"
                   style={{
                     fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.68rem",
+                    fontSize: "0.78rem",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#9B9590",
-                    borderColor: "#E8E4DC",
+                    color: "#2A2A28",
+                    borderColor: "#8A8580",
+                    fontWeight: 600,
                   }}
                 >
                   <span>▶</span>
@@ -176,14 +179,15 @@ export default function ProjectDetailPage() {
                   href={project.figmaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A]"
+                  className="inline-flex items-center gap-2 px-5 py-3 border-2 transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A] hover:bg-[#FDF5F0]"
                   style={{
                     fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.68rem",
+                    fontSize: "0.78rem",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#9B9590",
-                    borderColor: "#E8E4DC",
+                    color: "#2A2A28",
+                    borderColor: "#8A8580",
+                    fontWeight: 600,
                   }}
                 >
                   <span>◈</span>
@@ -195,14 +199,15 @@ export default function ProjectDetailPage() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 border transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A]"
+                  className="inline-flex items-center gap-2 px-5 py-3 border-2 transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A] hover:bg-[#FDF5F0]"
                   style={{
                     fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.68rem",
+                    fontSize: "0.78rem",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#9B9590",
-                    borderColor: "#E8E4DC",
+                    color: "#2A2A28",
+                    borderColor: "#8A8580",
+                    fontWeight: 600,
                   }}
                 >
                   <span>↗</span>
@@ -300,14 +305,15 @@ export default function ProjectDetailPage() {
                         href={pdf.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 border transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A]"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 border-2 transition-colors duration-200 hover:border-[#C4603A] hover:text-[#C4603A] hover:bg-[#FDF5F0]"
                         style={{
                           fontFamily: "'DM Mono', monospace",
-                          fontSize: "0.65rem",
+                          fontSize: "0.75rem",
                           letterSpacing: "0.07em",
                           textTransform: "uppercase",
-                          color: "#9B9590",
-                          borderColor: "#E8E4DC",
+                          color: "#2A2A28",
+                          borderColor: "#8A8580",
+                          fontWeight: 600,
                         }}
                       >
                         <span>↓</span>
@@ -327,10 +333,11 @@ export default function ProjectDetailPage() {
               className="flex items-center gap-2 transition-colors duration-200 hover:text-[#C4603A]"
               style={{
                 fontFamily: "'DM Mono', monospace",
-                fontSize: "0.7rem",
+                fontSize: "0.8rem",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#9B9590",
+                color: "#3A3A38",
+                fontWeight: 600,
               }}
             >
               <span>←</span>
@@ -346,10 +353,11 @@ export default function ProjectDetailPage() {
                 className="flex items-center gap-2 transition-colors duration-200 hover:text-[#C4603A]"
                 style={{
                   fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.7rem",
+                  fontSize: "0.8rem",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  color: "#9B9590",
+                  color: "#3A3A38",
+                  fontWeight: 600,
                 }}
               >
                 <span>下一个项目</span>

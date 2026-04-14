@@ -135,7 +135,7 @@ function DesktopInner() {
         height: "100vh",
         overflow: "hidden",
         position: "relative",
-        background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #1a1a2e 100%)",
+        background: "url('/wallpaper.jpg') center/cover no-repeat",
         fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
       }}
     >

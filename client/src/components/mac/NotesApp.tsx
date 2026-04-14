@@ -121,36 +121,8 @@ const NOTES: Note[] = [
       </div>
     ),
   },
-  {
-    id: "interests",
-    title: "✨ 兴趣爱好",
-    preview: "电影、城市漫步、咖啡...",
-    content: (
-      <div>
-        <h2 style={{ fontSize: "18px", fontWeight: 700, color: "#2A2A28", marginBottom: "16px" }}>
-          兴趣爱好 ✨
-        </h2>
-        <p style={{ lineHeight: 1.8, color: "#3A3A38", marginBottom: "14px" }}>
-          我热爱电影，尤其是那些在视觉语言上有独特表达的作品——侯孝贤的长镜头、
-          韦斯·安德森的对称美学，都让我着迷。这也是为什么我会做 CineRoute 这个项目：
-          把电影取景地变成可以实地探访的旅行路线。
-        </p>
-        <p style={{ lineHeight: 1.8, color: "#3A3A38", marginBottom: "14px" }}>
-          我喜欢在城市里漫步，观察人与空间的关系。纽约的地铁、北京的胡同、
-          上海的弄堂——每个城市都有自己独特的叙事逻辑，等待被发现。
-        </p>
-        <p style={{ lineHeight: 1.8, color: "#3A3A38", marginBottom: "14px" }}>
-          咖啡是我的日常仪式。我会为了一杯好咖啡走很远的路，
-          顺便观察那家咖啡馆的空间设计和用户体验。
-        </p>
-        <p style={{ lineHeight: 1.8, color: "#3A3A38" }}>
-          我也在学习摄影，试图用镜头捕捉那些转瞬即逝的光线和情绪。
-          好的照片和好的设计一样——都是关于如何在有限的空间里，讲一个完整的故事。
-        </p>
-      </div>
-    ),
-  },
 ];
+
 
 export default function NotesApp() {
   const [selected, setSelected] = useState<string>("intro");

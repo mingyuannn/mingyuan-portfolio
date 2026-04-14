@@ -83,19 +83,15 @@ const NOTES: Note[] = [
         {[
           {
             category: "设计工具",
-            items: ["Figma", "MasterGo", "Adobe Premiere Pro", "Midjourney", "Runway"],
+            items: ["Figma", "MasterGo", "Photoshop", "Premiere Pro", "Midjourney"],
           },
           {
-            category: "开发技能",
-            items: ["React / TypeScript", "HTML / CSS / JavaScript", "Node.js", "Python", "Git"],
+            category: "用户研究",
+            items: ["用户访谈", "情景实验", "问卷设计", "竞品分析"],
           },
           {
-            category: "研究方法",
-            items: ["用户访谈", "可用性测试", "竞品分析", "信息架构", "原型设计"],
-          },
-          {
-            category: "AI 工具",
-            items: ["ChatGPT / Claude", "DeepSeek API", "Midjourney v6", "Runway Gen-2"],
+            category: "编程语言",
+            items: ["JavaScript", "Python"],
           },
         ].map((group) => (
           <div key={group.category} style={{ marginBottom: "16px" }}>

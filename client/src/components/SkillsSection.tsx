@@ -6,43 +6,35 @@ import { useEffect, useRef } from "react";
 
 const skillCategories = [
   {
-    id: "ai",
-    label: "AI 工具",
-    number: "01",
-    skills: [
-      { name: "Midjourney", desc: "图像生成与视觉概念开发" },
-      { name: "Runway", desc: "视频合成与运动生成" },
-      { name: "ChatGPT / Claude", desc: "叙事开发与内容策略" },
-    ],
-  },
-  {
     id: "design",
-    label: "设计",
-    number: "02",
+    label: "设计工具",
+    number: "01",
     skills: [
       { name: "Figma", desc: "UI/UX 原型与交互设计" },
       { name: "MasterGo", desc: "产品设计与协作线框图" },
       { name: "Photoshop", desc: "视觉编辑与资产制作" },
+      { name: "Premiere Pro", desc: "视频编辑与后期制作" },
+      { name: "Midjourney", desc: "AI 图像生成与视觉概念开发" },
+    ],
+  },
+  {
+    id: "research",
+    label: "用户研究",
+    number: "02",
+    skills: [
+      { name: "用户访谈", desc: "深度访谈与质性洞察收集" },
+      { name: "情景实验", desc: "真实环境下的行为观察与分析" },
+      { name: "问卷设计", desc: "量化研究与数据收集" },
+      { name: "竞品分析", desc: "市场格局与产品对标研究" },
     ],
   },
   {
     id: "programming",
-    label: "编程",
+    label: "编程语言",
     number: "03",
     skills: [
-      { name: "Python", desc: "数据分析、自动化与 AI 脚本" },
       { name: "JavaScript", desc: "Web 开发与交互式原型" },
-      { name: "HTML / CSS", desc: "前端结构与样式" },
-    ],
-  },
-  {
-    id: "media",
-    label: "媒体工具",
-    number: "04",
-    skills: [
-      { name: "Premiere Pro", desc: "视频编辑与后期制作" },
-      { name: "Photoshop", desc: "照片处理与平面设计" },
-      { name: "After Effects", desc: "动态图形与视觉特效" },
+      { name: "Python", desc: "数据分析、自动化与 AI 脚本" },
     ],
   },
 ];

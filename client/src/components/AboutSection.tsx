@@ -8,7 +8,7 @@ const ABOUT_TEXTURE = "https://private-us-east-1.manuscdn.com/user_upload_by_mod
 
 const highlights = [
   { label: "专注领域", value: "人机交互" },
-  { label: "大学", value: "康奈尔大学" },
+  { label: "大学", value: "康奈尔大学工学院" },
   { label: "项目", value: "信息科学硕士" },
   { label: "地点", value: "纽约州纽约市" },
 ];
@@ -59,7 +59,7 @@ export default function AboutSection() {
 
             <div className="space-y-5 reveal">
               <p className="font-['DM_Sans'] text-[#52504A] leading-[1.85] text-base">
-                我是康奈尔大学信息科学专业的硕士研究生，专注于人机交互、人工智能应用和创意技术。我的背景涵盖媒体制作、产品设计和用户研究。
+                我是康奈尔大学工学院信息科学专业的硕士研究生，专注于人机交互、人工智能应用和创意技术。我的背景涵盖媒体制作、产品设计和用户研究。
               </p>
               <p className="font-['DM_Sans'] text-[#52504A] leading-[1.85] text-base">
                 我的工作处于叙事与技术的交汇点。我制作了重新诠释中国古代神话的 AI 生成短片，为听障用户设计了 AR 无障碍工具，并进行了用户研究以重塑城市交通体验。

@@ -93,7 +93,7 @@ export default function ContactSection() {
                 <p className="font-['DM_Sans'] text-[#1A1A18] text-base">
                   纽约州纽约市
                   <br />
-                  <span className="text-[#9B9590] text-sm">康奈尔大学</span>
+                  <span className="text-[#9B9590] text-sm">康奈尔大学工学院</span>
                 </p>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function ContactSection() {
 
             <div className="flex flex-col sm:items-end gap-2">
               <p className="font-['DM_Mono'] text-[0.65rem] tracking-[0.08em] uppercase text-white/30">
-                康奈尔大学 · 信息科学硕士
+                康奈尔大学工学院 · 信息科学硕士
               </p>
               <p className="font-['DM_Mono'] text-[0.65rem] tracking-[0.08em] uppercase text-white/20">
                 © {new Date().getFullYear()} Mingyuan Pang

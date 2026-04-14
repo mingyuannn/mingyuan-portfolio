@@ -51,9 +51,9 @@ const NOTES: Note[] = [
           教育经历 🎓
         </h2>
         <div style={{ marginBottom: "20px" }}>
-          <div style={{ fontWeight: 700, fontSize: "15px", color: "#2A2A28" }}>康奈尔大学</div>
+          <div style={{ fontWeight: 700, fontSize: "15px", color: "#2A2A28" }}>康奈尔大学工学院</div>
           <div style={{ fontSize: "13px", color: ACCENT, marginBottom: "4px" }}>信息科学硕士 · 人机交互方向</div>
-          <div style={{ fontSize: "12px", color: "#888" }}>2024 — 2026 · 纽约州伊萨卡</div>
+          <div style={{ fontSize: "12px", color: "#888" }}>2025 — 2027 · 纽约</div>
           <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.7, marginTop: "8px" }}>
             核心课程涵盖用户体验研究、交互设计、信息架构与产品管理。
             参与多个跨学科项目，将技术实现与以人为中心的设计方法相结合。
@@ -62,7 +62,7 @@ const NOTES: Note[] = [
         <div style={{ borderTop: "1px solid #E8D88A", paddingTop: "16px" }}>
           <div style={{ fontWeight: 700, fontSize: "15px", color: "#2A2A28" }}>纽约大学</div>
           <div style={{ fontSize: "13px", color: ACCENT, marginBottom: "4px" }}>媒体、文化与传播学士</div>
-          <div style={{ fontSize: "12px", color: "#888" }}>2019 — 2023 · 纽约</div>
+          <div style={{ fontSize: "12px", color: "#888" }}>2021 — 2025 · 纽约</div>
           <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.7, marginTop: "8px" }}>
             系统学习媒体理论、视觉传播与数字叙事。培养了对视觉美学与用户体验的深层理解，
             并在纽约多元的文化环境中拓宽了全球化视野。

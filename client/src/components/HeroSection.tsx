@@ -151,7 +151,7 @@ export default function HeroSection() {
                 color: "#9B9590",
               }}
             >
-              康奈尔大学 &nbsp;·&nbsp; 信息科学 &nbsp;·&nbsp; 人机交互
+              康奈尔大学工学院 &nbsp;·&nbsp; 信息科学 &nbsp;·&nbsp; 人机交互
             </span>
           </div>
 

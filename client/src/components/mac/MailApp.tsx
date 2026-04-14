@@ -24,7 +24,7 @@ const EMAILS: Email[] = [
   {
     id: "hello",
     from: "庞茗元",
-    fromEmail: "mp2559@cornell.edu",
+    fromEmail: "mp2335@cornell.edu",
     subject: "一封来自我的信 👋",
     preview: "感谢你来到这里，很高兴认识你...",
     time: "今天",
@@ -49,9 +49,7 @@ const EMAILS: Email[] = [
         {/* Contact cards */}
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           {[
-            { icon: "✉️", label: "邮件", value: "mp2559@cornell.edu", href: "mailto:mp2559@cornell.edu" },
-            { icon: "💼", label: "LinkedIn", value: "linkedin.com/in/mingyuanpang", href: "https://www.linkedin.com/in/mingyuanpang" },
-            { icon: "🐙", label: "GitHub", value: "github.com/mingyuannn", href: "https://github.com/mingyuannn" },
+            { icon: "✉️", label: "邮件", value: "mp2335@cornell.edu", href: "mailto:mp2335@cornell.edu" },
           ].map((item) => (
             <a
               key={item.label}
@@ -255,7 +253,7 @@ export default function MailApp() {
           flexShrink: 0,
         }}>
           <a
-            href="mailto:mp2559@cornell.edu"
+            href="mailto:mp2335@cornell.edu"
             style={{
               display: "inline-flex", alignItems: "center", gap: "6px",
               fontSize: "13px", color: "#fff", background: ACCENT,

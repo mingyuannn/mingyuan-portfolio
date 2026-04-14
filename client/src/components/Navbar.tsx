@@ -72,6 +72,14 @@ export default function Navbar() {
             </button>
           ))}
           <a
+            href="/desktop"
+            className="nav-link flex items-center gap-1.5"
+            title="macOS 桌面版"
+          >
+            <span style={{ fontSize: '13px' }}>🖥</span>
+            <span>桌面版</span>
+          </a>
+          <a
             href="mailto:mp2335@cornell.edu"
             className="ml-2 px-5 py-2.5 bg-[#1A1A18] text-[#F7F5F0] font-['DM_Mono'] text-[0.7rem] tracking-[0.1em] uppercase transition-all duration-300 hover:bg-[#C4603A]"
           >

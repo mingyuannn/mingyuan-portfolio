@@ -32,7 +32,7 @@ const NOTES: Note[] = [
           我热衷于探索技术与人之间的关系——如何让复杂的系统变得直观、有温度、真正有用。
         </p>
         <p style={{ lineHeight: 1.8, color: "#3A3A38", marginBottom: "14px" }}>
-          在加入康奈尔之前，我在中国传媒大学完成了本科学业，主修数字媒体艺术。
+          在加入康奈尔之前，我在纽约大学完成了本科学业，主修媒体、文化与传播。
           这段跨学科的学习经历让我在产品思维之外，还保有对叙事、视觉美学和创意表达的持续热情。
         </p>
         <p style={{ lineHeight: 1.8, color: "#3A3A38" }}>
@@ -60,12 +60,12 @@ const NOTES: Note[] = [
           </p>
         </div>
         <div style={{ borderTop: "1px solid #E8D88A", paddingTop: "16px" }}>
-          <div style={{ fontWeight: 700, fontSize: "15px", color: "#2A2A28" }}>中国传媒大学</div>
-          <div style={{ fontSize: "13px", color: ACCENT, marginBottom: "4px" }}>数字媒体艺术学士</div>
-          <div style={{ fontSize: "12px", color: "#888" }}>2019 — 2023 · 北京</div>
+          <div style={{ fontWeight: 700, fontSize: "15px", color: "#2A2A28" }}>纽约大学</div>
+          <div style={{ fontSize: "13px", color: ACCENT, marginBottom: "4px" }}>媒体、文化与传播学士</div>
+          <div style={{ fontSize: "12px", color: "#888" }}>2019 — 2023 · 纽约</div>
           <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.7, marginTop: "8px" }}>
-            系统学习视觉设计、影视制作与数字叙事。毕业设计获优秀评级，
-            培养了对视觉美学与用户体验的深层理解。
+            系统学习媒体理论、视觉传播与数字叙事。培养了对视觉美学与用户体验的深层理解，
+            并在纽约多元的文化环境中拓宽了全球化视野。
           </p>
         </div>
       </div>

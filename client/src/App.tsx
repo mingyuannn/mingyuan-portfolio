@@ -13,9 +13,10 @@ import MacDesktop from "./pages/MacDesktop";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/project/:id"} component={ProjectDetailPage} />
+      <Route path={"/"} component={MacDesktop} />
       <Route path={"/desktop"} component={MacDesktop} />
+      <Route path={"/home"} component={Home} />
+      <Route path={"/project/:id"} component={ProjectDetailPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

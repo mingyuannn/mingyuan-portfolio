@@ -176,6 +176,24 @@ function DesktopInner() {
         ))}
         {/* Right side */}
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "12px" }}>
+          <a
+            href="/home"
+            style={{
+              fontSize: "12px",
+              color: "#555",
+              textDecoration: "none",
+              padding: "1px 8px",
+              borderRadius: "4px",
+              border: "1px solid #C8C8C8",
+              background: "rgba(255,255,255,0.55)",
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+              lineHeight: "20px",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.9)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.55)"; }}
+          >
+            传统版
+          </a>
           <span style={{ fontSize: "13px", color: "#1A1A1A" }}>🔋</span>
           <span style={{ fontSize: "13px", color: "#1A1A1A" }}>📶</span>
           <MenuClock />

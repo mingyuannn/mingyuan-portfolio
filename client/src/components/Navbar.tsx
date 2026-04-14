@@ -72,7 +72,7 @@ export default function Navbar() {
             </button>
           ))}
           <a
-            href="/desktop"
+            href="/"
             className="nav-link flex items-center gap-1.5"
             title="macOS 桌面版"
           >

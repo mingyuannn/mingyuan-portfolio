@@ -416,15 +416,11 @@ export default function MacDesktop() {
   return (
     <>
       {!booted && <BootScreen onComplete={handleBootComplete} />}
-      <div style={{
-        opacity: booted ? 1 : 0,
-        transition: "opacity 0.6s ease",
-        pointerEvents: booted ? "auto" : "none",
-      }}>
+      {booted && (
         <WindowManagerProvider>
           <DesktopInner />
         </WindowManagerProvider>
-      </div>
+      )}
     </>
   );
 }

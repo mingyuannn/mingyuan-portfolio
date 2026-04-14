@@ -26,7 +26,7 @@ export default function DraggableWindow({
   children,
   titleBarExtra,
 }: Props) {
-  const { windows, closeWindow, minimizeWindow, focusWindow, updatePosition } = useWindowManager();
+  const { windows, closeWindow, minimizeWindow, maximizeWindow, focusWindow, updatePosition } = useWindowManager();
   const win = windows[id];
   const windowRef = useRef<HTMLDivElement>(null);
   const dragState = useRef<{ dragging: boolean; startX: number; startY: number; origX: number; origY: number }>({
@@ -35,6 +35,7 @@ export default function DraggableWindow({
 
   const onMouseDownTitle = useCallback((e: React.MouseEvent) => {
     if ((e.target as HTMLElement).closest(".traffic-light")) return;
+    if (win.isMaximized) return; // don't drag when maximized
     focusWindow(id);
     dragState.current = {
       dragging: true,
@@ -44,7 +45,7 @@ export default function DraggableWindow({
       origY: win.position.y,
     };
     e.preventDefault();
-  }, [focusWindow, id, win.position]);
+  }, [focusWindow, id, win.position, win.isMaximized]);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -52,7 +53,7 @@ export default function DraggableWindow({
       const dx = e.clientX - dragState.current.startX;
       const dy = e.clientY - dragState.current.startY;
       const newX = Math.max(0, dragState.current.origX + dx);
-      const newY = Math.max(28, dragState.current.origY + dy); // don't go above menubar
+      const newY = Math.max(36, dragState.current.origY + dy); // don't go above menubar
       updatePosition(id, { x: newX, y: newY });
     };
     const onUp = () => { dragState.current.dragging = false; };
@@ -66,11 +67,24 @@ export default function DraggableWindow({
 
   if (!win.isOpen || win.isMinimized) return null;
 
-  return (
-    <div
-      ref={windowRef}
-      onMouseDown={() => focusWindow(id)}
-      style={{
+  const isMax = win.isMaximized;
+  const containerStyle: React.CSSProperties = isMax
+    ? {
+        position: "fixed",
+        left: 0,
+        top: 36,
+        width: "100vw",
+        height: "calc(100vh - 36px)",
+        zIndex: win.zIndex,
+        borderRadius: 0,
+        overflow: "hidden",
+        boxShadow: "none",
+        display: "flex",
+        flexDirection: "column",
+        userSelect: "none",
+        transition: "all 0.22s cubic-bezier(0.4, 0, 0.2, 1)",
+      }
+    : {
         position: "fixed",
         left: win.position.x,
         top: win.position.y,
@@ -85,11 +99,19 @@ export default function DraggableWindow({
         display: "flex",
         flexDirection: "column",
         userSelect: "none",
-      }}
+        transition: "all 0.22s cubic-bezier(0.4, 0, 0.2, 1)",
+      };
+
+  return (
+    <div
+      ref={windowRef}
+      onMouseDown={() => focusWindow(id)}
+      style={containerStyle}
     >
       {/* Title bar */}
       <div
         onMouseDown={onMouseDownTitle}
+        onDoubleClick={() => maximizeWindow(id)}
         style={{
           height: "36px",
           background: "linear-gradient(180deg, #EBEBEB 0%, #D6D6D6 100%)",
@@ -97,7 +119,7 @@ export default function DraggableWindow({
           display: "flex",
           alignItems: "center",
           padding: "0 12px",
-          cursor: "grab",
+          cursor: isMax ? "default" : "grab",
           flexShrink: 0,
           position: "relative",
         }}
@@ -130,16 +152,19 @@ export default function DraggableWindow({
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "transparent"; }}
             title="最小化"
           >−</button>
-          {/* Maximize (decorative) */}
+          {/* Maximize / Restore */}
           <button
+            onClick={(e) => { e.stopPropagation(); maximizeWindow(id); }}
             style={{
               width: "12px", height: "12px", borderRadius: "50%",
               background: "#28C840", border: "0.5px solid #1DAD2B",
-              cursor: "default", display: "flex", alignItems: "center", justifyContent: "center",
+              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: "8px", color: "transparent",
             }}
-            title="全屏"
-          >+</button>
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#003D00"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "transparent"; }}
+            title={isMax ? "还原" : "全屏"}
+          >{isMax ? "⤡" : "⤢"}</button>
         </div>
 
         {/* Title */}

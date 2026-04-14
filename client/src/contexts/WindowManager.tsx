@@ -1,6 +1,6 @@
 /*
   WindowManager — Global context for managing macOS-style floating windows
-  Tracks open/minimized state, z-index stacking, and positions
+  Tracks open/minimized/maximized state, z-index stacking, and positions
 */
 import React, { createContext, useContext, useState, useCallback } from "react";
 
@@ -10,6 +10,7 @@ export interface WindowState {
   id: AppId;
   isOpen: boolean;
   isMinimized: boolean;
+  isMaximized: boolean;
   zIndex: number;
   position: { x: number; y: number };
 }
@@ -19,6 +20,7 @@ interface WindowManagerContextType {
   openWindow: (id: AppId) => void;
   closeWindow: (id: AppId) => void;
   minimizeWindow: (id: AppId) => void;
+  maximizeWindow: (id: AppId) => void;
   focusWindow: (id: AppId) => void;
   updatePosition: (id: AppId, pos: { x: number; y: number }) => void;
   topZIndex: number;
@@ -35,6 +37,7 @@ const createDefault = (id: AppId, z: number): WindowState => ({
   id,
   isOpen: false,
   isMinimized: false,
+  isMaximized: false,
   zIndex: z,
   position: defaultPositions[id],
 });
@@ -61,14 +64,21 @@ export function WindowManagerProvider({ children }: { children: React.ReactNode 
   const closeWindow = useCallback((id: AppId) => {
     setWindows((prev) => ({
       ...prev,
-      [id]: { ...prev[id], isOpen: false, isMinimized: false },
+      [id]: { ...prev[id], isOpen: false, isMinimized: false, isMaximized: false },
     }));
   }, []);
 
   const minimizeWindow = useCallback((id: AppId) => {
     setWindows((prev) => ({
       ...prev,
-      [id]: { ...prev[id], isMinimized: true },
+      [id]: { ...prev[id], isMinimized: true, isMaximized: false },
+    }));
+  }, []);
+
+  const maximizeWindow = useCallback((id: AppId) => {
+    setWindows((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], isMaximized: !prev[id].isMaximized },
     }));
   }, []);
 
@@ -89,7 +99,7 @@ export function WindowManagerProvider({ children }: { children: React.ReactNode 
 
   return (
     <WindowManagerContext.Provider
-      value={{ windows, openWindow, closeWindow, minimizeWindow, focusWindow, updatePosition, topZIndex: topZ }}
+      value={{ windows, openWindow, closeWindow, minimizeWindow, maximizeWindow, focusWindow, updatePosition, topZIndex: topZ }}
     >
       {children}
     </WindowManagerContext.Provider>

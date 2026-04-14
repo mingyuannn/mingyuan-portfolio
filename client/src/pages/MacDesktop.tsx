@@ -2,14 +2,14 @@
   MacDesktop — macOS-style portfolio desktop
   Route: /desktop
 */
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { WindowManagerProvider, useWindowManager, AppId } from "../contexts/WindowManager";
 import DraggableWindow from "../components/mac/DraggableWindow";
 import FinderApp from "../components/mac/FinderApp";
 import NotesApp from "../components/mac/NotesApp";
 import MailApp from "../components/mac/MailApp";
 import PreviewApp from "../components/mac/PreviewApp";
-import BootScreen from "../components/mac/BootScreen";
+
 
 // ─── Dock App definitions ────────────────────────────────────────────────────
 const DOCK_APPS: { id: AppId; label: string; icon: React.ReactNode }[] = [
@@ -410,17 +410,9 @@ function DesktopInner() {
 
 // ─── MacDesktop (wraps with WindowManager provider) ────────────────────────────────────────────
 export default function MacDesktop() {
-  const [booted, setBooted] = useState(false);
-  const handleBootComplete = useCallback(() => setBooted(true), []);
-
   return (
-    <>
-      {!booted && <BootScreen onComplete={handleBootComplete} />}
-      {booted && (
-        <WindowManagerProvider>
-          <DesktopInner />
-        </WindowManagerProvider>
-      )}
-    </>
+    <WindowManagerProvider>
+      <DesktopInner />
+    </WindowManagerProvider>
   );
 }

@@ -125,46 +125,70 @@ export default function DraggableWindow({
         }}
       >
         {/* Traffic lights */}
-        <div className="traffic-light" style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+        <div className="traffic-light" style={{ display: "flex", gap: "2px", alignItems: "center" }}>
           {/* Close */}
           <button
             onClick={(e) => { e.stopPropagation(); closeWindow(id); }}
             style={{
+              width: "24px", height: "24px", borderRadius: "50%",
+              background: "transparent", border: "none",
+              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+              padding: 0, flexShrink: 0,
+            }}
+            title="关闭"
+          >
+            <span style={{
               width: "12px", height: "12px", borderRadius: "50%",
               background: "#FF5F57", border: "0.5px solid #E0443E",
-              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "8px", color: "transparent",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "8px", color: "transparent", flexShrink: 0,
             }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#7D0000"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "transparent"; }}
-            title="关闭"
-          >✕</button>
+            >✕</span>
+          </button>
           {/* Minimize */}
           <button
             onClick={(e) => { e.stopPropagation(); minimizeWindow(id); }}
             style={{
+              width: "24px", height: "24px", borderRadius: "50%",
+              background: "transparent", border: "none",
+              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+              padding: 0, flexShrink: 0,
+            }}
+            title="最小化"
+          >
+            <span style={{
               width: "12px", height: "12px", borderRadius: "50%",
               background: "#FFBD2E", border: "0.5px solid #DEA123",
-              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "8px", color: "transparent",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "8px", color: "transparent", flexShrink: 0,
             }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#7D5000"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "transparent"; }}
-            title="最小化"
-          >−</button>
+            >−</span>
+          </button>
           {/* Maximize / Restore */}
           <button
             onClick={(e) => { e.stopPropagation(); maximizeWindow(id); }}
             style={{
+              width: "24px", height: "24px", borderRadius: "50%",
+              background: "transparent", border: "none",
+              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+              padding: 0, flexShrink: 0,
+            }}
+            title={isMax ? "还原" : "全屏"}
+          >
+            <span style={{
               width: "12px", height: "12px", borderRadius: "50%",
               background: "#28C840", border: "0.5px solid #1DAD2B",
-              cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "8px", color: "transparent",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "8px", color: "transparent", flexShrink: 0,
             }}
             onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#003D00"; }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "transparent"; }}
-            title={isMax ? "还原" : "全屏"}
-          >{isMax ? "⤡" : "⤢"}</button>
+            >{isMax ? "⤡" : "⤢"}</span>
+          </button>
         </div>
 
         {/* Title */}

@@ -117,7 +117,7 @@ function MenuClock() {
   const fmt = time.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" });
   const dateFmt = time.toLocaleDateString("zh-CN", { month: "short", day: "numeric", weekday: "short" });
   return (
-    <span style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif", fontSize: "13px", color: "#1A1A1A" }}>
+    <span style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(210, 218, 255, 0.88)", letterSpacing: "0.01em" }}>
       {dateFmt} {fmt}
     </span>
   );
@@ -149,53 +149,100 @@ function DesktopInner() {
 
       {/* ── Top Menu Bar ── */}
       <div style={{
-        position: "fixed", top: 0, left: 0, right: 0, height: "28px",
-        background: "rgba(236,236,236,0.92)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(0,0,0,0.15)",
+        position: "fixed", top: 0, left: 0, right: 0, height: "36px",
+        background: "rgba(12, 14, 28, 0.72)",
+        backdropFilter: "blur(28px) saturate(180%)",
+        WebkitBackdropFilter: "blur(28px) saturate(180%)",
+        borderBottom: "1px solid rgba(120, 140, 200, 0.15)",
         display: "flex", alignItems: "center",
-        padding: "0 16px",
+        padding: "0 20px",
         zIndex: 9999,
       }}>
-        {/* Apple logo → MP */}
-        <span style={{ fontSize: "15px", fontWeight: 700, color: "#1A1A1A", marginRight: "20px", letterSpacing: "-0.02em" }}>
+        {/* MP logo */}
+        <span style={{
+          fontSize: "15px", fontWeight: 700,
+          color: "rgba(220, 225, 255, 0.95)",
+          marginRight: "24px",
+          letterSpacing: "-0.02em",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif",
+          cursor: "default",
+        }}>
           MP
         </span>
-        {/* Menu items */}
-        {["关于我", "项目", "技能", "联系"].map((item) => (
-          <span key={item} style={{
-            fontSize: "13px", color: "#1A1A1A", marginRight: "16px",
-            cursor: "default", padding: "2px 6px", borderRadius: "4px",
-          }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(0,0,0,0.08)"; }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+
+        {/* Menu items — click to open corresponding window */}
+        {([
+          { label: "关于我", appId: "notes" as AppId },
+          { label: "项目",   appId: "finder" as AppId },
+          { label: "技能",   appId: "notes" as AppId },
+          { label: "联系",   appId: "mail" as AppId },
+        ] as { label: string; appId: AppId }[]).map((item) => (
+          <span
+            key={item.label}
+            onClick={() => openWindow(item.appId)}
+            style={{
+              fontSize: "13px",
+              fontWeight: 400,
+              color: "rgba(210, 218, 255, 0.88)",
+              marginRight: "4px",
+              cursor: "default",
+              padding: "3px 9px",
+              borderRadius: "5px",
+              letterSpacing: "0.01em",
+              fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
+              transition: "background 0.12s",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(180, 200, 255, 0.14)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
           >
-            {item}
+            {item.label}
           </span>
         ))}
+
         {/* Right side */}
-        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "12px" }}>
+        <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "14px" }}>
           <a
             href="/home"
             style={{
               fontSize: "12px",
-              color: "#555",
+              color: "rgba(180, 195, 255, 0.75)",
               textDecoration: "none",
-              padding: "1px 8px",
-              borderRadius: "4px",
-              border: "1px solid #C8C8C8",
-              background: "rgba(255,255,255,0.55)",
+              padding: "2px 10px",
+              borderRadius: "5px",
+              border: "1px solid rgba(140, 160, 255, 0.25)",
+              background: "rgba(100, 120, 200, 0.12)",
               fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif",
-              lineHeight: "20px",
+              letterSpacing: "0.02em",
+              lineHeight: "22px",
+              transition: "all 0.15s",
             }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.9)"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.55)"; }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(140, 160, 255, 0.22)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(210, 220, 255, 0.95)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(100, 120, 200, 0.12)";
+              (e.currentTarget as HTMLAnchorElement).style.color = "rgba(180, 195, 255, 0.75)";
+            }}
           >
             传统版
           </a>
-          <span style={{ fontSize: "13px", color: "#1A1A1A" }}>🔋</span>
-          <span style={{ fontSize: "13px", color: "#1A1A1A" }}>📶</span>
+
+          {/* Wi-Fi icon */}
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none" style={{ opacity: 0.7 }}>
+            <path d="M8 10.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="rgba(200,215,255,0.9)"/>
+            <path d="M5.2 8.1a4 4 0 0 1 5.6 0" stroke="rgba(200,215,255,0.9)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
+            <path d="M2.8 5.7a7 7 0 0 1 10.4 0" stroke="rgba(200,215,255,0.7)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
+            <path d="M0.5 3.3A10 10 0 0 1 15.5 3.3" stroke="rgba(200,215,255,0.45)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
+          </svg>
+
+          {/* Battery icon */}
+          <svg width="22" height="12" viewBox="0 0 22 12" fill="none" style={{ opacity: 0.7 }}>
+            <rect x="0.5" y="1.5" width="18" height="9" rx="2.5" stroke="rgba(200,215,255,0.8)" strokeWidth="1"/>
+            <rect x="2" y="3" width="13" height="6" rx="1.5" fill="rgba(120,220,140,0.9)"/>
+            <path d="M19.5 4.5v3a1.5 1.5 0 0 0 0-3z" fill="rgba(200,215,255,0.6)"/>
+          </svg>
+
           <MenuClock />
         </div>
       </div>

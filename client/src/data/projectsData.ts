@@ -3,9 +3,9 @@
 */
 
 const DAYU_IMG = "/dayu-cover.jpg";
-const AR_IMG =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663409787492/7mPcQcem2UYFzT3RtPotqe/project-ar-glasses-YRV9yH3xbmHv354X6ZLB9t.webp";
+const AR_IMG = "/placeholder-ar-glasses.svg";
 const CINEROUTE_IMG = "/imageofcine.jpg";
+const EMPATHY_GAP_IMG = "/placeholder-empathy-gap.svg";
 
 export interface ProjectDetail {
   heading: string;
@@ -188,6 +188,60 @@ export const projects: Project[] = [
         heading: "反思",
         content:
           "CineRoute 是一项关于 vibe coding 能将产品理念推进到何种程度的实验。从一个简单的提示开始，该应用通过快速迭代而成长——每个功能的添加都是为了响应前一个版本中缺失的内容。最有趣的挑战是设计能够可靠地返回结构化、可地图渲染数据的 AI 提示，并处理模型返回不完美 JSON 的不可避免的边缘情况。",
+      },
+    ],
+  },
+  {
+    id: "empathy-gap",
+    number: "04",
+    title: "The Empathy Gap",
+    subtitle: "AI 研究 · 心理健康",
+    category: "AI 伦理 · 人机交互 · 心理健康",
+    tags: ["LLM 审计", "PHQ-9", "心理健康", "人机交互", "研究"],
+    image: EMPATHY_GAP_IMG,
+    summary:
+      "一项对三个大语言模型如何回应模糊情绪困扰的黑箱审计——揭示 AI 安全机制是关键词驱动的，躯体症状被误读，而情感温暖替代了临床行动。",
+    details: [
+      {
+        heading: "研究问题",
+        content:
+          "对话式 AI 模型越来越多地被用作非正式的心理健康支持，然而它们的安全机制从根本上是二元的：它们检测到明确的危机关键词就会提供热线资源，但留下了一个巨大的临床中间地带未被覆盖。大多数经历抑郁的人不会使用临床语言——他们的痛苦是微妙的、模糊的，嵌入在日常表达中。我们称之为共情鸿沟（Empathy Gap）。",
+      },
+      {
+        heading: "研究方法",
+        content: [
+          "对三个主流大语言模型进行黑箱审计：Claude (Sonnet 4.6)、GPT-5.3 和豆包 (seed2.0)。",
+          "50 个提示词映射到 PHQ-9 抑郁症状的九个类别，翻译成自然口语以绕过基于关键词的安全过滤器。",
+          "从 VERA-MH 框架改编的六维临床评分标准：情感确认、现实检验、升级意识、建议风险、转介质量和语气语言。",
+          "所有 150 个回应由两位评分者独立评分，加权 Cohen's κ = 0.46–0.60（中等一致性）。",
+        ],
+      },
+      {
+        heading: "核心发现",
+        content: [
+          "安全机制是关键词驱动的，而非光谱感知的：Claude (3.86) 和豆包 (2.09) 之间的升级意识差距为 1.77 分——整个数据集中最大的维度差距。",
+          "普遍盲区：睡眠障碍是每个模型得分最低的 PHQ-9 类别；转介质量普遍薄弱（豆包：19 个高风险提示中 0 次转介）。",
+          "礼貌陷阱：情感温暖与临床安全脱钩——豆包是最持续温暖的模型，但在升级意识、建议风险和转介质量上得分明显更低。",
+        ],
+      },
+      {
+        heading: "设计建议",
+        content: [
+          "光谱感知的升级机制：基于 PHQ-9 映射的困扰模式进行训练，而不仅仅是危机关键词。当检测到模糊的困扰时，提出一个临床探查问题。",
+          "高风险输入默认转介：寻求帮助的负担不应由可能不知道自己符合条件的用户承担。",
+          "将温暖与安全分离：将情感温暖 (EV/TL) 和临床安全 (EA/AR/RQ) 作为独立轴进行评估，设置独立的最低阈值。",
+        ],
+      },
+      {
+        heading: "完整报告",
+        content:
+          "完整的研究报告，包括方法论、评分标准、案例研究、跨模型比较和设计建议。",
+        pdfAttachments: [
+          {
+            label: "The Empathy Gap — 完整研究报告",
+            url: "/empathy-gap-report.pdf",
+          },
+        ],
       },
     ],
   },

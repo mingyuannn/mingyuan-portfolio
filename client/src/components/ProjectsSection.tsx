@@ -27,6 +27,7 @@ const FOLDER_COLORS = [
   "#5B9BD5", // blue — 大禹治水
   "#6BAE75", // green — AR glasses
   "#E07B54", // terracotta — CineRoute
+  "#8B6B8E", // purple — Empathy Gap
 ];
 
 function FolderCard({
